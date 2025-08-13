@@ -400,6 +400,7 @@
 
 @media (max-width: 900px) {
     .breathing-controls {
+        display: none !important;
         right: 0.25rem;
         top: auto;
         bottom: 0.25rem;
@@ -409,6 +410,22 @@
         padding: 0.35rem 0.5rem;
     }
     .breathing-option { font-size: 0.8rem; }
+
+    /* Place circles under the section title and align with its left edge */
+    .breathing-container {
+        position: static;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        transform: none;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: var(--content-max);
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
