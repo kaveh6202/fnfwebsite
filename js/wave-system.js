@@ -13,6 +13,8 @@ class WaveSystem {
         this.rafId = null;
         this.defaultWaveCount = 7;
         this.waveCount = this.defaultWaveCount;
+        this.inStressRelief = false;
+        this.mobileBreakpointPx = 900; // keep in sync with CSS
         // Chakra palette (RGB) - fixed colors only
         this.baseColors = [
             [211, 47, 47],    // Deep Red – #D32F2F (Root)
@@ -66,10 +68,14 @@ class WaveSystem {
         // Handle section visibility
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.updateWaveCount(14); // Increase waves in stress relief section
+                this.inStressRelief = entry.isIntersecting;
+                const isMobile = window.innerWidth <= this.mobileBreakpointPx;
+                if (this.inStressRelief) {
+                    // On small screens, disable waves in Stress Relief
+                    this.updateWaveCount(isMobile ? 0 : 14);
                 } else {
-                    this.updateWaveCount(this.defaultWaveCount); // Reset when leaving section
+                    // Outside Stress Relief, use default
+                    this.updateWaveCount(this.defaultWaveCount);
                 }
             });
         }, { threshold: 0.3 }); // Trigger when 30% of section is visible
@@ -92,6 +98,14 @@ class WaveSystem {
         this.canvas.style.width = '100vw';
         this.canvas.style.height = '100vh';
         this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+
+        // Adjust wave count responsively when resizing
+        const isMobile = window.innerWidth <= this.mobileBreakpointPx;
+        if (this.inStressRelief) {
+            this.updateWaveCount(isMobile ? 0 : 14);
+        } else {
+            this.updateWaveCount(this.defaultWaveCount);
+        }
     }
 
     createWaves() {

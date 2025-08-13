@@ -132,8 +132,9 @@ class BreathingCircle {
 		const maxRadius = (this.svgSize / 2) - (STROKE_WIDTH / 2) - SAFETY_PADDING - RADIUS_JITTER_MAX;
 		const baseRadius = Math.max(1, Math.floor((maxRadius - orbitRadius) / MAX_SCALE));
 
-        // Create 16 circles
-		for (let i = 0; i < 16; i++) {
+        // Create circles (responsive count)
+        const circleCount = (window.innerWidth <= 900) ? 4 : 16;
+        for (let i = 0; i < circleCount; i++) {
             const strokeColor = this.colors[i % this.colors.length];
             const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             circle.setAttribute('cx', String(this.centerX));
@@ -194,7 +195,8 @@ class BreathingCircle {
         this.orbitRadius = orbitRadius;
 
         // Make initial circles visible
-        for (let i = 0; i < 8; i++) {
+        const initialActive = Math.min(8, this.circles.length);
+        for (let i = 0; i < initialActive; i++) {
             this.circles[i].style.opacity = '1';
             this.activeCircles.add(i);
         }
@@ -239,7 +241,8 @@ class BreathingCircle {
         const radius = this.orbitRadius; // small orbit so circles are visible individually
 
         this.circles.forEach((circle, index) => {
-            const baseAngle = (index / 16) * Math.PI * 2;
+            const divisor = this.circles.length || 1;
+            const baseAngle = (index / divisor) * Math.PI * 2;
             const angle = baseAngle + angleOffset;
             const x = centerX + Math.cos(angle) * radius;
             const y = centerY + Math.sin(angle) * radius;
@@ -424,6 +427,41 @@ class BreathingCircle {
                 const r = Math.max(1, currentRadius + off);
                 circle.setAttribute('r', String(r));
             });
+
+            // Rebuild if responsive count changed
+            const desiredCount = (window.innerWidth <= 900) ? 4 : 16;
+            if (desiredCount !== this.circles.length) {
+                // Remove existing
+                this.circles.forEach(c => c.remove());
+                this.circles = [];
+                this.activeCircles.clear();
+                // Recreate
+                for (let i = 0; i < desiredCount; i++) {
+                    const strokeColor = this.colors[i % this.colors.length];
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('cx', String(this.centerX));
+                    circle.setAttribute('cy', String(this.centerY));
+                    const off2 = Math.round((Math.random() * (RADIUS_JITTER_MAX * 2)) - RADIUS_JITTER_MAX);
+                    circle.dataset.rOffset = String(off2);
+                    circle.setAttribute('r', String(Math.max(1, currentRadius + off2)));
+                    circle.setAttribute('stroke', strokeColor);
+                    circle.setAttribute('stroke-width', '3');
+                    circle.setAttribute('fill', 'none');
+                    circle.style.opacity = '0';
+                    circle.style.transition = 'opacity 1.5s ease-in-out';
+                    this.svg.appendChild(circle);
+                    this.circles.push(circle);
+                }
+                // Activate subset
+                const initCount = Math.min(8, this.circles.length);
+                for (let i = 0; i < initCount; i++) {
+                    this.circles[i].style.opacity = '1';
+                    this.activeCircles.add(i);
+                }
+                // Reposition and start animations for active set
+                this.positionCircles(this.currentRotationAngle);
+                this.activeCircles.forEach(idx => this.animateCircle(idx));
+            }
 
             // No center text updates
 
