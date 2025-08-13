@@ -1,0 +1,163 @@
+/* MOBILE FLIP CARD FIX - Simplify for mobile */
+@media (max-width: 768px) {
+    /* Reset flip card complexity on mobile */
+    #enhancedPracticesPanel .flip-card {
+        perspective: none !important;
+        height: auto !important;
+        min-height: 350px !important;
+        width: 100% !important;
+        margin: 0 auto 1rem auto !important;
+        background: rgba(20, 24, 22, 0.35) !important;
+        backdrop-filter: blur(12px) saturate(160%) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
+        border-radius: 20px !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+        overflow: hidden !important;
+        position: relative !important;
+        max-width: 90% !important;
+        transition: all 0.6s ease-in-out !important;
+        transform: translateY(0) !important;
+    }
+    
+    #enhancedPracticesPanel .flip-inner {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 350px !important;
+        transform: none !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        transition: none !important;
+    }
+    
+    #enhancedPracticesPanel .flip-face {
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 350px !important;
+        background: transparent !important;
+        border: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+    }
+    
+    /* Show back face on hover/touch for mobile */
+    #enhancedPracticesPanel .flip-back {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(20, 24, 22, 0.95) !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        padding: 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        opacity: 0 !important;
+        transition: opacity 0.6s ease-in-out !important;
+        border-radius: 16px !important;
+        z-index: 2 !important;
+    }
+    
+    #enhancedPracticesPanel .flip-back h3 {
+        margin: 0 0 1rem !important;
+        font-family: 'Manrope', Inter, system-ui, -apple-system, sans-serif !important;
+        font-size: 1.2rem !important;
+        font-weight: 700 !important;
+        color: var(--title-color) !important;
+        text-align: left !important;
+    }
+    
+    #enhancedPracticesPanel .flip-back p {
+        margin: 0 !important;
+        color: var(--text-secondary) !important;
+        line-height: 1.65 !important;
+        text-align: left !important;
+        font-size: 1rem !important;
+    }
+    
+    #enhancedPracticesPanel .flip-front {
+        display: flex !important;
+        opacity: 1 !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 350px !important;
+        transition: opacity 0.6s ease-in-out !important;
+    }
+    
+    #enhancedPracticesPanel .flip-front .thumb {
+        width: 100% !important;
+        height: 250px !important;
+        flex: 1 1 auto !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255,255,255,0.04) !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    
+    #enhancedPracticesPanel .flip-front .thumb img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        filter: saturate(110%) !important;
+        transition: transform 0.6s ease !important;
+    }
+    
+    #enhancedPracticesPanel .flip-front .label {
+        padding: 1.25rem 1.5rem 1.5rem !important;
+        text-align: center !important;
+        color: var(--text-primary) !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        background: rgba(20, 24, 22, 0.8) !important;
+        letter-spacing: 0.02em !important;
+        font-family: 'Manrope', Inter, system-ui, -apple-system, sans-serif !important;
+    }
+    
+    /* Touch-friendly hover effects for mobile */
+    #enhancedPracticesPanel .flip-card:hover,
+    #enhancedPracticesPanel .flip-card:focus,
+    #enhancedPracticesPanel .flip-card:active {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+        background: rgba(20, 24, 22, 0.5) !important;
+        backdrop-filter: blur(18px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(18px) saturate(200%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    }
+    
+    /* Image zoom effect on hover (like Classes section) */
+    #enhancedPracticesPanel .flip-card:hover .flip-front .thumb img {
+        transform: scale(1.05) !important;
+    }
+    
+    /* Show description on hover/touch */
+    #enhancedPracticesPanel .flip-card:hover .flip-back,
+    #enhancedPracticesPanel .flip-card:focus .flip-back,
+    #enhancedPracticesPanel .flip-card:active .flip-back {
+        opacity: 1 !important;
+    }
+    
+    /* Hide front face when showing description */
+    #enhancedPracticesPanel .flip-card:hover .flip-front,
+    #enhancedPracticesPanel .flip-card:focus .flip-front,
+    #enhancedPracticesPanel .flip-card:active .flip-front {
+        opacity: 0 !important;
+    }
+    
+    /* Touch interaction for mobile */
+    #enhancedPracticesPanel .flip-card {
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1) !important;
+    }
+}

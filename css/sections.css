@@ -1,0 +1,414 @@
+/* Sections with enhanced separation */
+.section {
+    min-height: calc(92vh - 72px); /* slightly shorter than full screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.5rem; /* increased spacing for better separation */
+    position: relative;
+    /* Removed scroll-snap-align for better performance */
+}
+
+/* Add visual separation between sections */
+.section:not(#hero) {
+    border-top: none; /* remove divider line */
+    margin-top: 3rem;
+}
+
+.section:not(#hero)::before { content: none; }
+
+/* Hero Section */
+#hero {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem; /* Add some bottom padding */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    z-index: 2;
+    margin-top: -2rem; /* Offset slightly up from exact center */
+}
+
+/* Hero brand row: logo + wordmark on same line */
+.hero-brand {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.6rem, 2vw, 1.25rem);
+}
+.hero-brand .hero-logo {
+    width: min(28vw, 220px);
+    height: auto;
+    flex: 0 0 auto;
+    transform-origin: center;
+    will-change: transform, filter;
+    animation: 
+        hero-breathe 7s ease-in-out infinite,
+        hero-color 84s ease-in-out infinite; /* 12 breath cycles per color change */
+    opacity: 0.7;
+    filter: drop-shadow(1px 0 0 rgba(15, 74, 81, 0.7))
+            drop-shadow(-1px 0 0 rgba(15, 74, 81, 0.7))
+            drop-shadow(0 1px 0 rgba(15, 74, 81, 0.7))
+            drop-shadow(0 -1px 0 rgba(15, 74, 81, 0.7));
+}
+
+@keyframes hero-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+
+@keyframes hero-color {
+    0%, 100% {
+        filter: invert(45%) sepia(65%) saturate(873%) hue-rotate(327deg) brightness(101%) contrast(87%)
+                drop-shadow(1px 0 0 #2CD0D0)
+                drop-shadow(-1px 0 0 #2CD0D0)
+                drop-shadow(0 1px 0 #2CD0D0)
+                drop-shadow(0 -1px 0 #2CD0D0); /* Complementary to Root Red */
+    }
+    16.6% {
+        filter: invert(57%) sepia(73%) saturate(909%) hue-rotate(360deg) brightness(102%) contrast(91%)
+                drop-shadow(1px 0 0 #0A83FF)
+                drop-shadow(-1px 0 0 #0A83FF)
+                drop-shadow(0 1px 0 #0A83FF)
+                drop-shadow(0 -1px 0 #0A83FF); /* Complementary to Sacral Orange */
+    }
+    33.3% {
+        filter: invert(83%) sepia(27%) saturate(895%) hue-rotate(359deg) brightness(101%) contrast(91%)
+                drop-shadow(1px 0 0 #043FD2)
+                drop-shadow(-1px 0 0 #043FD2)
+                drop-shadow(0 1px 0 #043FD2)
+                drop-shadow(0 -1px 0 #043FD2); /* Complementary to Solar Yellow */
+    }
+    50% {
+        filter: invert(45%) sepia(82%) saturate(434%) hue-rotate(91deg) brightness(95%) contrast(88%)
+                drop-shadow(1px 0 0 #C771C3)
+                drop-shadow(-1px 0 0 #C771C3)
+                drop-shadow(0 1px 0 #C771C3)
+                drop-shadow(0 -1px 0 #C771C3); /* Complementary to Heart Green */
+    }
+    66.6% {
+        filter: invert(57%) sepia(83%) saturate(4990%) hue-rotate(178deg) brightness(97%) contrast(91%)
+                drop-shadow(1px 0 0 #D2772E)
+                drop-shadow(-1px 0 0 #D2772E)
+                drop-shadow(0 1px 0 #D2772E)
+                drop-shadow(0 -1px 0 #D2772E); /* Complementary to Throat Blue */
+    }
+    83.3% {
+        filter: invert(23%) sepia(57%) saturate(1699%) hue-rotate(217deg) brightness(92%) contrast(87%)
+                drop-shadow(1px 0 0 #CFC060)
+                drop-shadow(-1px 0 0 #CFC060)
+                drop-shadow(0 1px 0 #CFC060)
+                drop-shadow(0 -1px 0 #CFC060); /* Complementary to Third Eye Indigo */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-brand .hero-logo { 
+        animation: none !important;
+        filter: invert(45%) sepia(65%) saturate(873%) hue-rotate(327deg) brightness(101%) contrast(87%)
+                drop-shadow(1px 0 0 rgba(15, 74, 81, 0.6))
+                drop-shadow(-1px 0 0 rgba(15, 74, 81, 0.6))
+                drop-shadow(0 1px 0 rgba(15, 74, 81, 0.6))
+                drop-shadow(0 -1px 0 rgba(15, 74, 81, 0.6));
+    }
+}
+.hero-brand .hero-wordmark {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    color: #0F4A51;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.hero-brand .hero-slogan {
+    font-family: 'Quicksand', sans-serif;
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    color: #0F4A51;
+    opacity: 0.85;
+    letter-spacing: 1.4px;
+    font-weight: 200; /* Ultra-thin weight */
+    position: absolute;
+    text-align: right;
+    white-space: nowrap;
+    right: 0; /* Align to the right edge of the container */
+    bottom: 2.2rem; /* Keep the higher position */
+    line-height: 0.4;
+    display: block;
+    font-stretch: 90%;
+    font-feature-settings: "tnum" 1; /* Use tabular numbers for even thinner appearance */
+}
+
+.hero-title {
+    font-family: 'Great Vibes', cursive;
+    background: linear-gradient(135deg, var(--earthy-olive), var(--golden-warmth));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(2rem, 6vw, 4.5rem); /* half of previous size */
+    letter-spacing: 0.5px;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--dark);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.hero-cta {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--golden-warmth);
+    color: var(--dark);
+    box-shadow: none; /* flat */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 2.4rem; /* more internal space */
+    border-radius: 999px; /* fully rounded */
+    line-height: 1; /* avoid extra height issues */
+    white-space: nowrap; /* keep text in one line */
+    border: none;
+    text-decoration: none;
+}
+.hero-cta:hover {
+    background: color-mix(in srgb, var(--golden-warmth) 85%, #000 15%);
+}
+
+.hero-icon { display: none; }
+
+/* Enhanced section titles with better prominence */
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    font-weight: 400;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    text-align: left; /* align left */
+    color: var(--title-color);
+    line-height: 1.1;
+    margin-left: 0; /* stick to left of section */
+    display: block;
+    width: 100%; /* span full section width */
+    align-self: stretch; /* override flex centering if any */
+    padding-left: var(--title-indent);
+    max-width: var(--content-max);
+    /* Remove shadows for clean look */
+    text-shadow: none;
+    position: relative;
+    z-index: 2;
+}
+
+/* Add subtle underline accent for section titles */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 140px; /* longer underline */
+    height: 3px;
+    background: linear-gradient(90deg, var(--golden-warmth), transparent);
+    margin-top: 1rem;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+/* Ensure these titles are centered even if previously overridden */
+#classes .section-title,
+#testimonials .section-title,
+#newsletter .section-title,
+#ask-armita .section-title {
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center the underline accent for centered titles */
+#classes .section-title::after,
+#testimonials .section-title::after,
+#newsletter .section-title::after,
+#ask-armita .section-title::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--dark);
+    opacity: 0.9;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* Global left alignment for section contents (excluding hero) */
+.section > .section-content {
+    padding-left: var(--title-indent);
+    text-align: left;
+    max-width: var(--content-max);
+    color: var(--text-secondary);
+    margin-right: auto;
+}
+/* Classes */
+#classes .classes-grid { padding-left: var(--title-indent); }
+/* Enhanced Practices */
+#enhancedPracticesPanel .section-content { padding-left: var(--title-indent); max-width: var(--content-max); text-align: left; }
+/* Testimonials */
+#testimonials .slider-container { padding-left: var(--title-indent); max-width: var(--content-max); margin-right: auto; }
+/* Newsletter */
+#newsletter .section-content { text-align: left !important; padding-left: var(--title-indent); max-width: var(--content-max); margin-right: auto; }
+#newsletter form { margin-left: var(--title-indent); max-width: var(--content-max); }
+/* Ask Armita */
+#ask-armita .section-content { text-align: left !important; padding-left: var(--title-indent); max-width: var(--content-max); margin-right: auto; }
+#ask-armita .hero-cta { margin-left: var(--title-indent); }
+
+/* Stress Relief Section */
+#stressRelief {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 72px; /* Account for fixed header */
+}
+
+#stressRelief .section-title {
+    margin-bottom: 0;
+}
+
+/* Breathing Circle */
+#stressRelief {
+    position: relative;
+}
+
+#stressRelief .section-title {
+    /* Keep original section title styling */
+    margin-bottom: 0;
+}
+
+/* Ensure the Stress Relief title never blocks clicks on the breathing controls */
+#stressRelief .section-title { pointer-events: none; }
+
+.breathing-container {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 70%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.breathing-container svg { position: relative; pointer-events: none; }
+.breathing-container svg * { pointer-events: none; }
+
+.breathing-container circle.gloss {
+    fill: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    filter: none;
+}
+
+.breathing-container circle.main {
+    fill: none;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 5px currentColor);
+}
+
+.breathing-container text {
+    fill: #000000;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
+    z-index: 2;
+}
+
+/* Breathing pattern controls */
+.breathing-controls {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    pointer-events: auto;
+    z-index: 1000;
+    cursor: default;
+}
+
+.breathing-option {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #1E2A26;
+    font-family: 'Manrope', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.25rem;
+    border-radius: 8px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    position: relative;
+    z-index: 1;
+}
+.breathing-option .breathing-label,
+.breathing-option .breathing-dot { cursor: pointer; }
+
+.breathing-option:hover { background: rgba(255,255,255,0.6); }
+
+.breathing-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.breathing-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #0F4A51;
+    display: inline-block;
+    position: relative;
+}
+
+.breathing-option.selected .breathing-dot::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0F4A51;
+    transform: translate(-50%, -50%);
+}
+
+.breathing-label { white-space: nowrap; }
+
+@media (max-width: 900px) {
+    .breathing-controls {
+        right: 0.25rem;
+        top: auto;
+        bottom: 0.25rem;
+        transform: none;
+        flex-direction: row;
+        gap: 0.35rem;
+        padding: 0.35rem 0.5rem;
+    }
+    .breathing-option { font-size: 0.8rem; }
+}
+
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armita Yogalates - Futuristic Movement & Healing</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Quicksand:wght@200;300;400&display=swap" rel="stylesheet">
+    
+    <!-- Motion One (lightweight WAAPI-based animations) -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.4/dist/motion.min.js"></script>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/mobile-fix.css">
+</head>
+<body>
+    <!-- Fixed background brand logo -->
+    <img id="bgBrand" src="images/Logo_Single.svg" alt="Armita Background Logo" />
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo" aria-label="Feather & Flow home">
+                <img src="images/Logo_Single.svg" alt="Feather & Flow logo" class="logo-icon" />
+            </a>
+            <span id="currentSectionTitle"></span>
+            <button class="burger" aria-expanded="false" aria-label="Toggle menu"><span></span></button>
+            <ul class="nav-links">
+                <li><a href="#hero">Home<span class="text-overlay">Home</span></a></li>
+                <li><a href="#biography">Biography<span class="text-overlay">Biography</span></a></li>
+                <li><a href="#classes">Classes<span class="text-overlay">Classes</span></a></li>
+                <li><a href="#testimonials">Testimonials<span class="text-overlay">Testimonials</span></a></li>
+                <li><a href="#newsletter">Newsletter<span class="text-overlay">Newsletter</span></a></li>
+                <li><a href="#ask-armita">Ask Armita<span class="text-overlay">Ask Armita</span></a></li>
+                <li><a href="#stressRelief">Stress Relief<span class="text-overlay">Stress Relief</span></a></li>
+                <li><a href="#enhancedPracticesPanel">Enhanced Practices<span class="text-overlay">Enhanced Practices</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Camera Container -->
+    <div id="cameraContainer">
+        <!-- Surface that moves -->
+        <div id="surface">
+            <!-- Sophisticated Wave Canvas Background -->
+            <canvas id="waveCanvas"></canvas>
+            
+            <!-- Hero Section -->
+            <section id="hero">
+                <img src="images/Banner_02.png" alt="Armita Banner" class="hero-icon">
+                <div class="hero-content">
+                    <div class="hero-brand">
+                        <img src="images/Icon_.svg" alt="Feather & Flow logo" class="hero-logo" />
+                        <span class="hero-wordmark">Feather & Flow</span>
+                        <p class="hero-slogan">Not your typical Yoga Studio!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Biography Section -->
+            <section id="biography" class="section">
+                <h2 class="section-title">The Art of Dynamic Healing</h2>
+                <div class="bio-grid">
+                    <div class="bio-text">
+                        <p>Armita crafts bodies that move like poetry. </p>
+                        <p>Every session is a living design—stability in the joints, curiosity in the spine, precision in breath—so strength arrives without strain.</p>
+                        <p>Her Yogalates method blends intelligent sequencing with hands-on refinement. She reads tension patterns quickly and adapts the flow in real‑time so you are challenged, supported, and changed—often in a single hour.</p>
+                        <p>Expect grounded power, not theatrics. Expect warmth, not hype. Expect your posture, balance, and joint mechanics to quietly reorganize into something more fluid, resilient, and deeply yours.</p>
+                    </div>
+                    <div class="bio-media">
+                        <img src="images/armita-pose.jpeg" alt="Armita in practice pose">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Classes Section -->
+            <section id="classes" class="section">
+                <h2 class="section-title">Signature Experiences</h2>
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <div class="card-media">
+                            <img src="images/armita-pose-2.jpeg" alt="Yoga practice" />
+                        </div>
+                        <div class="card-body">
+                            <h3 class="class-title">Yoga</h3>
+                            <p class="section-content" style="padding-left:0;max-width:none;">Rooted alignment and breath-led sequencing. Slow power, precise attention, and postures that reorganize how you stand, move, and recover.</p>
+                        </div>
+                    </div>
+
+                    <div class="class-card">
+                        <div class="card-media">
+                            <img src="images/armita-pose-4.jpeg" alt="Yogalates flow" />
+                        </div>
+                        <div class="card-body">
+                            <h3 class="class-title">Yogalates</h3>
+                            <p class="section-content" style="padding-left:0;max-width:none;">Armita's signature fusion—yoga intelligence meets Pilates control. Dynamic, adaptive flows that build resilient strength without sacrificing ease.</p>
+                        </div>
+                    </div>
+
+                    <div class="class-card">
+                        <div class="card-media">
+                            <img src="images/armita-pose-6.jpeg" alt="Pilates strength" />
+                        </div>
+                        <div class="card-body">
+                            <h3 class="class-title">Pilates</h3>
+                            <p class="section-content" style="padding-left:0;max-width:none;">Core-first training with graceful mechanics. Sculpt, stabilize, and refine with sequences that respect joints and amplify performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="section">
+                <h2 class="section-title">Voices of Transformation</h2>
+                <div class="slider-container">
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Armita doesn't just teach—she listens to what your body needs and responds with sequences that feel like they were designed specifically for your soul."</p>
+                        <p class="testimonial-author">— Sarah Chen, Architect</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section id="newsletter" class="section">
+                <h2 class="section-title">Stay Connected to the Flow</h2>
+                <div style="text-align: center;">
+                    <p class="section-content" style="margin-bottom: 2rem;">Receive insights on movement, exclusive practice videos, and early access to Enhanced Practice sessions.</p>
+                    <form style="display: inline-block;">
+                        <input type="email" placeholder="Your email address" style="padding: 1rem 1.5rem; border: 1px solid rgba(30,42,38,0.25); border-radius: 25px; margin-right: 1rem; min-width: 300px; background: rgba(255,255,255,0.95);">
+                        <button type="submit" style="padding: 1rem 2rem; background: var(--golden-warmth); color: var(--dark); border: none; border-radius: 25px; cursor: pointer; font-weight: 600; box-shadow:none;">Join the Flow</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Ask Armita Section -->
+            <section id="ask-armita" class="section">
+                <h2 class="section-title">Ask Armita</h2>
+                <div style="text-align: center;">
+                    <p class="section-content" style="margin-bottom: 2rem;">Have questions about your practice? Armita responds personally to inquiries about movement, alignment, and the art of conscious strengthening.</p>
+                    <a href="mailto:armita@yogalates.com" class="hero-cta">Send Your Question</a>
+                </div>
+            </section>
+
+            <!-- Stress Relief Section -->
+            <section id="stressRelief" class="section">
+                <h2 class="section-title">Stress Relief</h2>
+                <div class="breathing-container"></div>
+            </section>
+
+            <!-- Enhanced Practices Section -->
+            <section id="enhancedPracticesPanel" class="section">
+                <h2 class="section-title enhanced-title">Enhanced Practices</h2>
+                <p class="section-content">Experimental and exclusive: selected clients gain access to forward‑looking experiences blending body intelligence with emerging tech. These services are offered by invitation only.</p>
+                
+                <div class="tech-features">
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-face flip-front">
+                                <div class="thumb"><img src="images/online-analysis.png" alt="Online Body Analysis thumbnail"></div>
+                                <div class="label">Online Body Analysis</div>
+                            </div>
+                            <div class="flip-face flip-back">
+                                <h3>Online Body Analysis</h3>
+                                <p>Send a full‑body photo; we evaluate alignment and provide a tailored plan to refine posture, balance, and joint mechanics remotely.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-face flip-front">
+                                <div class="thumb"><img src="images/holograph.png" alt="Holographic Classes thumbnail"></div>
+                                <div class="label">Holographic Classes</div>
+                            </div>
+                            <div class="flip-face flip-back">
+                                <h3>Holographic Classes</h3>
+                                <p>An in‑room holographic Armita demonstrates, models corrections, and walks into class to guide precision in real time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flip-card">
+                        <div class="flip-inner">
+                            <div class="flip-face flip-front">
+                                <div class="thumb"><img src="images/Banner.png" alt="FF Suggestions thumbnail"></div>
+                                <div class="label">FF‑Suggestions</div>
+                            </div>
+                            <div class="flip-face flip-back">
+                                <h3>FF‑Suggestions</h3>
+                                <p>Feather & Flow sends daily tips and micro‑drills that fit your schedule—gentle nudges that compound into real change.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <div class="social-links">
+                        <a href="#instagram">Instagram</a>
+                        <a href="#youtube">YouTube</a>
+                        <a href="#facebook">Facebook</a>
+                        <a href="#tiktok">TikTok</a>
+                        <a href="#email">Contact</a>
+                    </div>
+                    <p>&copy; 2024 Armita Yogalates. Where strength meets grace.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/performance-manager.js"></script>
+    <script src="js/wave-system.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/breathing-circle.js"></script>
+
+    <script>
+        console.log('🎬 Armita Yogalates - Camera System Active');
+    </script>
+</body>
+</html>
