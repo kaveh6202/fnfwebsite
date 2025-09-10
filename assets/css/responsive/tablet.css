@@ -1,0 +1,192 @@
+/* Tablet Styles - 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Container adjustments */
+  .container { 
+    padding-inline: 20px; 
+  }
+
+  /* Header & Navigation */
+  .nav {
+    height: 68px;
+  }
+  
+  .brand {
+    font-size: 17px;
+    gap: 10px;
+  }
+  
+  .brand .logo {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .pill {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  /* Show burger menu on tablet */
+  .burger-menu {
+    display: flex;
+  }
+
+  /* Mobile-style navigation for tablet */
+  nav {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 68px);
+    background: var(--paper);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+    border-right: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  nav.active {
+    transform: translateX(0);
+  }
+  
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 32px 0;
+    height: 100%;
+  }
+  
+  nav li {
+    border-bottom: 1px solid var(--border);
+  }
+  
+  nav a {
+    display: block;
+    padding: 18px 32px;
+    border-radius: 0;
+    font-size: 16px;
+  }
+  
+  .nav .cta {
+    margin: 20px 32px;
+    margin-left: 32px;
+  }
+  
+  .login-nav {
+    border-top: 1px solid var(--border);
+    padding: 18px 32px;
+  }
+  
+  .login-nav .login-link {
+    width: 100%;
+    height: 48px;
+    justify-content: center;
+  }
+
+  /* Hero Section */
+  .hero .content {
+    padding: 100px 0 70px;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+  
+  .hero p {
+    font-size: 17px;
+  }
+  
+  .hero .actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Sections */
+  section {
+    padding: 80px 0;
+  }
+
+  /* Grid System */
+  .grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Cards */
+  .card {
+    padding: 28px;
+  }
+  
+  .card .icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 18px;
+  }
+  
+  .card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  /* Quote Section */
+  .quote-wrap {
+    padding: 80px 0;
+  }
+  
+  blockquote {
+    font-size: 19px;
+  }
+
+  /* Page Navigation */
+  .page-nav-section {
+    padding: 32px 0;
+  }
+  
+  .page-nav ul {
+    gap: 24px;
+  }
+  
+  .page-nav a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 50px 0 30px;
+  }
+  
+  .social {
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .social a {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .links {
+    gap: 20px;
+  }
+  
+  /* Auth Page Tablet Styles */
+  .auth-hero {
+    padding: 50px 0;
+    min-height: calc(100vh - 68px);
+  }
+  
+  .auth-card {
+    padding: 32px;
+  }
+  
+  .auth-header h1 {
+    font-size: 26px;
+  }
+}

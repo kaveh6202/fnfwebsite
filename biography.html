@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biography – Feather and Flow</title>
+<meta name="description" content="Learn about the journey and philosophy behind Feather and Flow. Where strength meets grace." />
+<meta name="color-scheme" content="light only" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- External CSS files -->
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/timeline.css">
+<!-- Responsive CSS files -->
+<link rel="stylesheet" href="assets/css/responsive/mobile.css">
+<link rel="stylesheet" href="assets/css/responsive/tablet.css">
+<link rel="stylesheet" href="assets/css/responsive/desktop.css">
+</head>
+<body>
+
+<!-- Wave Background Canvas -->
+<canvas id="waveCanvas" aria-hidden="true"></canvas>
+
+<div id="surface">
+<header role="banner" aria-label="Primary">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Feather and Flow Home">
+      <span class="logo" aria-hidden="true">
+        <img src="assets/images/Logo_Single.svg" alt="Feather and Flow Logo" width="32" height="32">
+      </span>
+      <span>Feather and Flow</span>
+      <span class="pill">Awareness in body, joy in life</span>
+    </a>
+    <!-- Burger Menu Button -->
+    <div class="burger-menu" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html" class="active">Biography</a></li>
+        <li><a href="stress-relief.html">Stress Relief</a></li>
+        <li><a class="btn cta" href="book-a-class.html">Book a Class</a></li>
+        <li class="login-nav">
+          <a href="login.html" class="login-link" aria-label="Login">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero" style="background-image: url('assets/images/armita/_MG_2568.jpg'); background-position: center top;">
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="container content">
+      <div class="stack">
+        <span class="pill">Personal Journey</span>
+        <span class="pill">Philosophy</span>
+      </div>
+      <h1>My Story & Approach</h1>
+      <p>Discover the journey that led to Feather and Flow, and the philosophy that guides every session.</p>
+    </div>
+  </section>
+
+  <!-- BIOGRAPHY CONTENT -->
+  <section id="story" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">My Journey</div>
+        <h2>From Student to Teacher</h2>
+        <p class="muted">A path of continuous learning and growth.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18M3 12h18" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-image">
+              <img src="assets/images/armita/_MG_2294.jpg" alt="Early beginnings in yoga practice" loading="lazy">
+            </div>
+            <div class="timeline-date">2015</div>
+            <h3>Early Beginnings</h3>
+            <p>My journey into movement began with a personal need for healing and self-discovery. What started as a search for physical wellness became a profound exploration of mind-body connection.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M6 7h12M6 12h12M6 17h8" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-image">
+              <img src="assets/images/armita/_MG_2316.jpg" alt="Training and certification journey" loading="lazy">
+            </div>
+            <div class="timeline-date">2017-2019</div>
+            <h3>Training & Certification</h3>
+            <p>Extensive training in both yoga and Pilates methodologies, combined with ongoing education in anatomy, biomechanics, and holistic wellness approaches. Completed 500-hour yoga teacher training and comprehensive Pilates certification.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="8" stroke="#ffffff" stroke-width="2"/>
+                <path d="M12 8v8M8 12h8" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-image">
+              <img src="assets/images/armita/_MG_2568.jpg" alt="Developing teaching philosophy" loading="lazy">
+            </div>
+            <div class="timeline-date">2020</div>
+            <h3>Teaching Philosophy</h3>
+            <p>Developed my core teaching philosophy: every body is unique, and every practice should honor that uniqueness. I believe in creating space for authentic movement and genuine self-discovery.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-image">
+              <img src="assets/images/armita/_MG_2674.jpg" alt="Feather and Flow launch" loading="lazy">
+            </div>
+            <div class="timeline-date">2021</div>
+            <h3>Feather and Flow Launch</h3>
+            <p>Founded Feather and Flow, combining my passion for movement with my vision of holistic wellness. Started offering both individual sessions and group classes.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker">
+            <div class="timeline-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M6 12l3 3 9-9" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-image">
+              <img src="assets/images/armita/_MG_2862.jpg" alt="Continuing growth and evolution" loading="lazy">
+            </div>
+            <div class="timeline-date">Present</div>
+            <h3>Continuing Growth</h3>
+            <p>The learning never stops. I continue to study, practice, and evolve my approach, always seeking new ways to serve my students' wellness journeys. Currently expanding into stress relief and therapeutic movement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" class="quote-wrap reveal" aria-label="Philosophy">
+    <div class="container quote">
+      <div class="section-head">
+        <div class="eyebrow">Teaching Philosophy</div>
+      </div>
+        <blockquote>
+          <p>"My teaching philosophy is rooted in respect for each student's journey. I believe classes should be structured by expertise so that everyone practices in a space suited to their level, free from comparison or pressure.</p>
+          
+          <p>Adjustment is central to my approach, as yoga should adapt to the individual body rather than forcing the body into an ideal. I emphasize that yoga is not about constantly pushing limits but about showing up with mindfulness—because as long as you attend with presence, yoga is already working.</p>
+          
+          <p>Through awareness in posture and presence on the mat, we nurture clarity, patience, and balance, which naturally extend into joy and a deeper sense of life beyond the practice."</p>
+        </blockquote>
+      <span class="cite">— My Approach to Teaching</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="container" style="text-align:center">
+      <h2>Ready to begin?</h2>
+      <p class="muted">For bookings, collaborations, or questions about my approach.</p>
+      <div class="stack" style="justify-content:center">
+        <a class="btn" href="mailto:hello@featherandflow.com">Get in Touch</a>
+        <a class="btn ghost" href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="classes" role="contentinfo">
+  <div class="container">
+    <div class="social" aria-label="Social links">
+      <a href="#" aria-label="Instagram" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="12" cy="12" r="3.5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube" title="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="7" width="18" height="10" rx="3" stroke="#6b7280" stroke-width="2"/>
+          <path d="M11 10l5 3-5 3v-6z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="#6b7280" stroke-width="2"/>
+          <path d="M13 8h2V6h-2a3 3 0 00-3 3v2H8v2h2v5h2v-5h2l1-2h-3V9a1 1 0 011-1z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="TikTok" title="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 7.5c1.1 1.6 2.9 2.5 5 2.5v2.5c-1.8.1-3.6-.6-5-1.9V15a5 5 0 11-3-4.6V12a2.5 2.5 0 102.5 2.5V6h2.5V7.5z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#contact" aria-label="Contact" title="Contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5h16v14H4z" stroke="#6b7280" stroke-width="2"/>
+          <path d="M4 8l8 5 8-5" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="links">
+      <a href="index.html">Home</a> ·
+      <a href="biography.html">Biography</a> ·
+      <a href="stress-relief.html">Stress Relief</a> ·
+      <a href="book-a-class.html">Book a Class</a>
+    </div>
+    <p class="copy">© <span id="year"></span> Feather and Flow. Where strength meets grace.</p>
+  </div>
+</footer>
+
+</div>
+
+<!-- External JavaScript files -->
+<script src="assets/js/smooth-scroll.js"></script>
+<script src="assets/js/reveal-animation.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/burger-menu.js"></script>
+<script src="assets/js/wellness-waves.js"></script>
+</body>
+</html>

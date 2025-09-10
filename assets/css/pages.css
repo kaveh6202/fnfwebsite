@@ -1,0 +1,134 @@
+/* ---- Wave Background ---- */
+#waveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* ---- Hero ---- */
+.hero{
+  position:relative; isolation:isolate;
+  min-height:80vh; display:grid; align-items:center;
+  background-size:cover; background-position:center;
+  color:#fff;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: linear-gradient(135deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.6) 100%);
+  z-index:1;
+}
+.hero .overlay{
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(5, 150, 105, 0.3) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 30%, rgba(245, 158, 11, 0.1) 70%);
+  mix-blend-mode:overlay;
+}
+.hero .content{
+  padding:120px 0 80px;
+  text-align:center;
+  max-width:900px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+.hero h1{ 
+  font-size:clamp(2.5rem, 6vw, 4rem); 
+  line-height:1.1; 
+  margin:0 0 24px;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  background:linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero p{ 
+  max-width:600px; 
+  margin:0 auto 32px; 
+  color:rgba(255,255,255,0.9);
+  font-size:18px;
+  line-height:1.7;
+}
+.hero .stack{ 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:12px;
+  justify-content:center;
+  margin-bottom:40px;
+}
+.hero .actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+
+/* Hero Button Text Colors */
+.hero .actions .btn {
+  color: white !important;
+}
+
+.hero .actions .btn.ghost {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero .actions .btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero .actions .btn.early-bird-hero {
+  color: white !important;
+}
+
+/* ---- Testimonial ---- */
+.quote-wrap{
+  background:linear-gradient(135deg, var(--brand-light) 0%, rgba(236, 253, 245, 0.5) 100%);
+  border-top:1px solid var(--border); 
+  border-bottom:1px solid var(--border);
+  padding:100px 0;
+}
+.quote{
+  max-width:800px; margin:0 auto; text-align:center;
+}
+.stars{ 
+  font-size:20px; 
+  letter-spacing:4px; 
+  color:var(--accent); 
+  margin-bottom:24px;
+}
+blockquote{
+  margin:0; padding:0; 
+  font-size:20px; 
+  color:var(--ink);
+  line-height:1.7;
+  font-style:italic;
+}
+.cite{ 
+  display:block; 
+  margin-top:24px; 
+  font-weight:600; 
+  color:var(--muted);
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+/* ---- Footer ---- */
+footer{
+  padding:60px 0 40px; text-align:center; color:var(--muted);
+  background:var(--paper);
+  border-top:1px solid var(--border);
+}
+.copy{ font-size:14px; opacity:.8 }

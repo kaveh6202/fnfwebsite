@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stress Relief – Feather and Flow</title>
+<meta name="description" content="Find peace and balance through mindful movement and breathing techniques. Stress relief through yoga and Pilates." />
+<meta name="color-scheme" content="light only" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- External CSS files -->
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/breathing-modal.css">
+<link rel="stylesheet" href="assets/css/yoga-modal.css">
+<!-- Responsive CSS files -->
+<link rel="stylesheet" href="assets/css/responsive/mobile.css">
+<link rel="stylesheet" href="assets/css/responsive/tablet.css">
+<link rel="stylesheet" href="assets/css/responsive/desktop.css">
+</head>
+<body>
+
+<!-- Wave Background Canvas -->
+<canvas id="waveCanvas" aria-hidden="true"></canvas>
+
+<div id="surface">
+<header role="banner" aria-label="Primary">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Feather and Flow Home">
+      <span class="logo" aria-hidden="true">
+        <img src="assets/images/Logo_Single.svg" alt="Feather and Flow Logo" width="32" height="32">
+      </span>
+      <span>Feather and Flow</span>
+      <span class="pill">Awareness in body, joy in life</span>
+    </a>
+    <!-- Burger Menu Button -->
+    <div class="burger-menu" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stress-relief.html" class="active">Stress Relief</a></li>
+        <li><a class="btn cta" href="book-a-class.html">Book a Class</a></li>
+        <li class="login-nav">
+          <a href="login.html" class="login-link" aria-label="Login">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero" style="background-image: url('assets/images/relaxation-abstract.png');">
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="container content">
+      <div class="stack">
+        <span class="pill">Stress Relief</span>
+        <span class="pill">Inner Peace</span>
+        <span class="pill">Mindful Recovery</span>
+      </div>
+      <h1>Find Your Balance</h1>
+      <p>Discover powerful techniques for stress relief, emotional balance, and deep relaxation through mindful movement and breathwork.</p>
+      <div class="actions">
+        <a href="#techniques" class="btn" aria-label="Explore techniques">Explore Techniques</a>
+        <a href="#benefits" class="btn ghost" aria-label="Learn about benefits">Benefits</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRESS RELIEF TECHNIQUES -->
+  <section id="stressRelief" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Stress Relief Techniques</div>
+        <h2>Pathways to Peace</h2>
+        <p class="muted">Evidence-based approaches for managing stress and finding inner calm.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card breathing-card" onclick="openBreathingModal()" style="cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18M3 12h18" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Breathwork & Meditation</h3>
+          <p>Learn powerful breathing techniques and guided meditation practices that activate your body's natural relaxation response.</p>
+          <div class="card-cta" style="margin-top: 16px; padding: 8px 16px; background: var(--brand-light); color: var(--brand); border-radius: 20px; font-size: 12px; font-weight: 600; text-align: center;">
+            Click to Practice →
+          </div>
+        </article>
+
+        <article class="card" onclick="openYogaModal()" style="cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18c3-6 9-6 12 0" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="7" r="3" stroke="#059669" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Gentle Flow Yoga</h3>
+          <p>Slow, mindful movements that release physical tension while calming the nervous system and promoting emotional balance.</p>
+          <div class="card-cta" style="margin-top: 16px; padding: 8px 16px; background: var(--brand-light); color: var(--brand); border-radius: 20px; font-size: 12px; font-weight: 600; text-align: center;">
+            Click to Practice →
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="#059669" stroke-width="2"/>
+              <path d="M12 8v8M8 12h8" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Restorative Practices</h3>
+          <p>Supported poses and deep relaxation techniques that allow your body and mind to completely unwind and restore.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5v14" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Body Awareness</h3>
+          <p>Develop deeper connection with your body's signals, learning to recognize and release areas of tension before they become chronic.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" stroke="#059669" stroke-width="2"/>
+              <path d="M3 12h2m14 0h2M12 3v2m0 14v2" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Mindfulness Integration</h3>
+          <p>Practical tools for bringing mindfulness into daily life, creating sustainable habits for long-term stress management.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M6 12l3 3 9-9" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Sleep & Recovery</h3>
+          <p>Evening practices and techniques designed to improve sleep quality and support your body's natural recovery processes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Benefits of Practice</div>
+        <h2>Transform Your Well-being</h2>
+        <p class="muted">Regular practice brings profound changes to both body and mind.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Physical Benefits</h3>
+          <ul style="text-align: left; color: var(--muted); line-height: 1.8;">
+            <li>Reduced muscle tension and pain</li>
+            <li>Improved sleep quality</li>
+            <li>Lower blood pressure</li>
+            <li>Enhanced immune function</li>
+            <li>Better digestion</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Mental & Emotional Benefits</h3>
+          <ul style="text-align: left; color: var(--muted); line-height: 1.8;">
+            <li>Decreased anxiety and worry</li>
+            <li>Improved mood and emotional stability</li>
+            <li>Enhanced focus and clarity</li>
+            <li>Greater resilience to stress</li>
+            <li>Increased self-awareness</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="quote-wrap reveal" aria-label="Testimonial">
+    <div class="container quote">
+      <div class="section-head">
+        <div class="eyebrow">Client Experience</div>
+      </div>
+      <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+      <blockquote>
+        "The stress relief techniques I learned have completely transformed how I handle daily challenges. I sleep better, feel more centered, and have tools I can use anywhere, anytime."
+      </blockquote>
+      <span class="cite">— Sarah M.</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="container" style="text-align:center">
+      <h2>Ready to find your peace?</h2>
+      <p class="muted">Start your journey to stress relief and inner balance today.</p>
+      <div class="stack" style="justify-content:center">
+        <a class="btn" href="mailto:hello@featherandflow.com">Book a Session</a>
+        <a class="btn ghost" href="index.html">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Breathing Practices Modal -->
+<div id="breathingModal" class="breathing-modal" aria-hidden="true">
+  <div class="modal-overlay" onclick="closeBreathingModal()"></div>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Breathing Practices</h2>
+      <button class="modal-close" onclick="closeBreathingModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Technique Selection -->
+    <div id="techniqueSelection" class="technique-selection">
+      <p class="modal-subtitle">Choose a breathing technique to practice</p>
+      
+      <div class="technique-grid">
+        <div class="technique-card" onclick="startTechnique('box')">
+          <div class="technique-icon">📦</div>
+          <h3>Box Breathing</h3>
+          <p>4-4-4-4 pattern for focus and calm</p>
+          <div class="technique-duration">5-10 minutes</div>
+        </div>
+        
+        <div class="technique-card" onclick="startTechnique('stress-relief')">
+          <div class="technique-icon">🌊</div>
+          <h3>Stress Relief</h3>
+          <p>4-7-8 pattern for instant relaxation</p>
+          <div class="technique-duration">3-5 minutes</div>
+        </div>
+        
+        <div class="technique-card" onclick="startTechnique('energizing')">
+          <div class="technique-icon">⚡</div>
+          <h3>Energizing Breath</h3>
+          <p>Quick breaths to boost energy</p>
+          <div class="technique-duration">2-3 minutes</div>
+        </div>
+        
+        <div class="technique-card" onclick="startTechnique('coherent')">
+          <div class="technique-icon">💎</div>
+          <h3>Coherent Breathing</h3>
+          <p>5-5 rhythm for balance</p>
+          <div class="technique-duration">5-15 minutes</div>
+        </div>
+        
+        <div class="technique-card" onclick="startTechnique('triangle')">
+          <div class="technique-icon">🔺</div>
+          <h3>Triangle Breathing</h3>
+          <p>4-4-4 pattern for grounding</p>
+          <div class="technique-duration">3-8 minutes</div>
+        </div>
+        
+        <div class="technique-card" onclick="startTechnique('extended-exhale')">
+          <div class="technique-icon">🍃</div>
+          <h3>Extended Exhale</h3>
+          <p>4-8 pattern for deep relaxation</p>
+          <div class="technique-duration">5-10 minutes</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Breathing Practice Interface -->
+    <div id="breathingPractice" class="breathing-practice" style="display: none;">
+      <div class="practice-header">
+        <button class="back-btn" onclick="backToSelection()">← Back</button>
+        <h3 id="currentTechniqueName">Box Breathing</h3>
+        <div class="session-timer" id="sessionTimer">00:00</div>
+      </div>
+      
+      <!-- Breathing Circle -->
+      <div class="breathing-circle-container">
+        <div class="phase-pill" id="phasePill">Get Ready</div>
+        <div class="breathing-circle" id="breathingCircle">
+          <div class="circle-inner">
+            <div class="breath-count" id="breathCount">4</div>
+          </div>
+          <svg class="progress-ring" width="206" height="206">
+            <circle
+              class="progress-ring-circle"
+              cx="103"
+              cy="103"
+              r="100"
+              fill="transparent"
+              stroke="currentColor"
+              stroke-width="4"
+              stroke-dasharray="628.32"
+              stroke-dashoffset="628.32"
+              transform="rotate(-90 103 103)"
+            />
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Progress and Controls -->
+      <div class="practice-controls">
+        <div class="progress-section">
+          <div class="cycle-counter">
+            <span>Cycle: </span>
+            <span id="cycleCount">0</span> / <span id="totalCycles">10</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+        
+        <div class="control-buttons">
+          <button class="control-btn" id="playPauseBtn" onclick="togglePractice()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M8 5v14l11-7z" stroke="currentColor" stroke-width="2" fill="currentColor"/>
+            </svg>
+          </button>
+          <button class="control-btn" onclick="resetPractice()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 12a9 9 0 019-9 9.75 9.75 0 016.74 2.74L21 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M21 3v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="guidance-text" id="guidanceText">
+          Click play to begin your breathing practice
+        </div>
+      </div>
+
+      <!-- Technique Details -->
+        <div class="technique-details" id="techniqueDetails">
+          <div class="details-section">
+            <h4>Overview</h4>
+            <div class="pattern-pill" id="patternPill">4-4-4-4</div>
+            <p id="techniqueOverview"></p>
+          </div>
+        
+        <div class="details-grid">
+          <div class="details-section">
+            <h4>Benefits</h4>
+            <ul id="techniqueBenefits"></ul>
+          </div>
+          
+          <div class="details-section">
+            <h4>Instructions</h4>
+            <ol id="techniqueInstructions"></ol>
+          </div>
+        </div>
+        
+        <div class="details-section">
+          <h4>💡 Pro Tip</h4>
+          <p id="techniqueTips"></p>
+        </div>
+        
+        <div class="details-section">
+          <h4>🎯 Best For</h4>
+          <p id="techniqueBestFor"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="classes" role="contentinfo">
+  <div class="container">
+    <div class="social" aria-label="Social links">
+      <a href="#" aria-label="Instagram" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="12" cy="12" r="3.5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube" title="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="7" width="18" height="10" rx="3" stroke="#6b7280" stroke-width="2"/>
+          <path d="M11 10l5 3-5 3v-6z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="#6b7280" stroke-width="2"/>
+          <path d="M13 8h2V6h-2a3 3 0 00-3 3v2H8v2h2v5h2v-5h2l1-2h-3V9a1 1 0 011-1z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="TikTok" title="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 7.5c1.1 1.6 2.9 2.5 5 2.5v2.5c-1.8.1-3.6-.6-5-1.9V15a5 5 0 11-3-4.6V12a2.5 2.5 0 102.5 2.5V6h2.5V7.5z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#contact" aria-label="Contact" title="Contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5h16v14H4z" stroke="#6b7280" stroke-width="2"/>
+          <path d="M4 8l8 5 8-5" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="links">
+      <a href="index.html">Home</a> ·
+      <a href="biography.html">Biography</a> ·
+      <a href="stress-relief.html">Stress Relief</a> ·
+      <a href="book-a-class.html">Book a Class</a>
+    </div>
+    <p class="copy">© <span id="year"></span> Feather and Flow. Where strength meets grace.</p>
+  </div>
+</footer>
+
+</div>
+
+  <!-- Yoga Modal -->
+  <div class="yoga-modal" id="yogaModal" aria-hidden="true" role="dialog" aria-labelledby="yogaModalTitle">
+    <div class="modal-overlay" onclick="closeYogaModal()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="yogaModalTitle">Gentle Flow Yoga</h2>
+        <button class="modal-close" onclick="closeYogaModal()" aria-label="Close yoga practice">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Category Selection -->
+      <div class="yoga-categories" id="yogaCategories">
+        <div class="modal-subtitle">Choose Your Practice Level</div>
+        
+        <div class="category-grid">
+          <div class="category-card" onclick="showYogaVideos('beginner')">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17l10 5 10-5" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12l10 5 10-5" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Beginner Flow</h3>
+            <p>Gentle introduction to yoga with basic poses and breathing</p>
+            <div class="category-duration">15-20 min sessions</div>
+          </div>
+
+          <div class="category-card" onclick="showYogaVideos('intermediate')">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="3" stroke="#059669" stroke-width="2"/>
+                <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="#059669" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Intermediate Flow</h3>
+            <p>Flowing sequences with moderate poses and breath work</p>
+            <div class="category-duration">25-35 min sessions</div>
+          </div>
+
+          <div class="category-card" onclick="showYogaVideos('restorative')">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M6 18c3-6 9-6 12 0" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="7" r="3" stroke="#059669" stroke-width="2"/>
+                <path d="M12 14v4" stroke="#059669" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Restorative Flow</h3>
+            <p>Deep relaxation with supported poses and meditation</p>
+            <div class="category-duration">30-45 min sessions</div>
+          </div>
+
+          <div class="category-card" onclick="showYogaVideos('morning')">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="5" stroke="#059669" stroke-width="2"/>
+                <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#059669" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Morning Energizer</h3>
+            <p>Awakening flows to start your day with vitality</p>
+            <div class="category-duration">10-20 min sessions</div>
+          </div>
+
+          <div class="category-card" onclick="showYogaVideos('evening')">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="#059669" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Evening Wind Down</h3>
+            <p>Calming sequences to release tension and prepare for sleep</p>
+            <div class="category-duration">15-30 min sessions</div>
+          </div>
+
+          <div class="category-card" onclick="showYogaVideos('stress')">
+            <div class="category-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Stress Relief</h3>
+            <p>Targeted flows to release tension and calm the mind</p>
+            <div class="category-duration">20-30 min sessions</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Gallery -->
+      <div class="yoga-videos" id="yogaVideos" style="display: none;">
+        <div class="video-header">
+          <button class="back-btn" onclick="backToCategories()">← Back to Categories</button>
+          <h3 id="currentCategoryName">Beginner Flow</h3>
+        </div>
+        
+        <div class="video-grid" id="videoGrid">
+          <!-- Videos will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- External JavaScript files -->
+<script src="assets/js/smooth-scroll.js"></script>
+<script src="assets/js/reveal-animation.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/burger-menu.js"></script>
+<script src="assets/js/breathing-practices.js"></script>
+<script src="assets/js/yoga-practices.js"></script>
+<script src="assets/js/wellness-waves.js"></script>
+</body>
+</html>

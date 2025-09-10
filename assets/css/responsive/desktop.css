@@ -1,0 +1,133 @@
+/* Desktop Styles - 1024px and above */
+@media (min-width: 1024px) {
+  /* Large Desktop - 1440px and above */
+  @media (min-width: 1440px) {
+    .container {
+      max-width: 1400px;
+      padding-inline: 32px;
+    }
+    
+    .hero h1 {
+      font-size: clamp(3.5rem, 5vw, 4.5rem);
+    }
+    
+    .hero p {
+      font-size: 20px;
+    }
+    
+    section {
+      padding: 120px 0;
+    }
+    
+    h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+    
+    .card {
+      padding: 40px;
+    }
+    
+    .card .icon {
+      width: 52px;
+      height: 52px;
+      margin-bottom: 24px;
+    }
+    
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    
+    blockquote {
+      font-size: 22px;
+    }
+  }
+
+  /* Extra Large Desktop - 1920px and above */
+  @media (min-width: 1920px) {
+    .container {
+      max-width: 1600px;
+      padding-inline: 40px;
+    }
+    
+    .hero .content {
+      padding: 140px 0 100px;
+    }
+    
+    .hero h1 {
+      font-size: clamp(4rem, 5vw, 5rem);
+    }
+    
+    section {
+      padding: 140px 0;
+    }
+    
+    .grid {
+      gap: 32px;
+    }
+    
+    .card {
+      padding: 48px;
+    }
+    
+    .quote-wrap {
+      padding: 120px 0;
+    }
+  }
+
+  /* Hide burger menu on desktop */
+  .burger-menu {
+    display: none;
+  }
+
+  /* Ensure navigation is horizontal on desktop */
+  nav {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+  
+  nav ul {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Grid System - Full 3 columns on desktop */
+  .grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Enhanced hover effects for desktop */
+  .card:hover {
+    transform: translateY(-12px);
+  }
+  
+  nav a:hover {
+    transform: translateY(-1px);
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .social a:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Better spacing for larger screens */
+  .hero .stack {
+    gap: 16px;
+  }
+  
+  .hero .actions {
+    gap: 20px;
+  }
+}

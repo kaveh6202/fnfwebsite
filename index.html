@@ -1,234 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armita Yogalates - Futuristic Movement & Healing</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Quicksand:wght@200;300;400&display=swap" rel="stylesheet">
-    
-    <!-- Motion One (lightweight WAAPI-based animations) -->
-    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.4/dist/motion.min.js"></script>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/mobile-fix.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Feather and Flow – Futuristic Movement & Healing</title>
+<meta name="description" content="Where strength meets grace. Yoga, Pilates, mindful movement, healing and recovery." />
+<meta name="color-scheme" content="light only" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- External CSS files -->
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/testimonials.css">
+<link rel="stylesheet" href="assets/css/pre-launch.css">
+<!-- Responsive CSS files -->
+<link rel="stylesheet" href="assets/css/responsive/mobile.css">
+<link rel="stylesheet" href="assets/css/responsive/tablet.css">
+<link rel="stylesheet" href="assets/css/responsive/desktop.css">
 </head>
 <body>
-    <!-- Fixed background brand logo -->
-    <img id="bgBrand" src="images/Logo_Single.svg" alt="Armita Background Logo" />
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#hero" class="logo" aria-label="Feather & Flow home">
-                <img src="images/Logo_Single.svg" alt="Feather & Flow logo" class="logo-icon" />
-            </a>
-            <span id="currentSectionTitle"></span>
-            <button class="burger" aria-expanded="false" aria-label="Toggle menu"><span></span></button>
-            <ul class="nav-links">
-                <li><a href="#hero">Home<span class="text-overlay">Home</span></a></li>
-                <li><a href="#biography">Biography<span class="text-overlay">Biography</span></a></li>
-                <li><a href="#classes">Classes<span class="text-overlay">Classes</span></a></li>
-                <li><a href="#testimonials">Testimonials<span class="text-overlay">Testimonials</span></a></li>
-                <li><a href="#newsletter">Newsletter<span class="text-overlay">Newsletter</span></a></li>
-                <li><a href="#ask-armita">Ask Armita<span class="text-overlay">Ask Armita</span></a></li>
-                <li><a href="#stressRelief">Stress Relief<span class="text-overlay">Stress Relief</span></a></li>
-                <li><a href="#enhancedPracticesPanel">Enhanced Practices<span class="text-overlay">Enhanced Practices</span></a></li>
-            </ul>
-        </div>
-    </nav>
+<!-- Wave Background Canvas -->
+<canvas id="waveCanvas" aria-hidden="true"></canvas>
 
-    <!-- Camera Container -->
-    <div id="cameraContainer">
-        <!-- Surface that moves -->
-        <div id="surface">
-            <!-- Sophisticated Wave Canvas Background -->
-            <canvas id="waveCanvas"></canvas>
-            
-            <!-- Hero Section -->
-            <section id="hero">
-                <img src="images/Banner_02.png" alt="Armita Banner" class="hero-icon">
-                <div class="hero-content">
-                    <div class="hero-brand">
-                        <img src="images/Icon_.svg" alt="Feather & Flow logo" class="hero-logo" />
-                        <span class="hero-wordmark">Feather & Flow</span>
-                        <p class="hero-slogan">Not your typical Yoga Studio!</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Biography Section -->
-            <section id="biography" class="section">
-                <h2 class="section-title">The Art of Dynamic Healing</h2>
-                <div class="bio-grid">
-                    <div class="bio-text">
-                        <p>Armita crafts bodies that move like poetry. </p>
-                        <p>Every session is a living design—stability in the joints, curiosity in the spine, precision in breath—so strength arrives without strain.</p>
-                        <p>Her Yogalates method blends intelligent sequencing with hands-on refinement. She reads tension patterns quickly and adapts the flow in real‑time so you are challenged, supported, and changed—often in a single hour.</p>
-                        <p>Expect grounded power, not theatrics. Expect warmth, not hype. Expect your posture, balance, and joint mechanics to quietly reorganize into something more fluid, resilient, and deeply yours.</p>
-                    </div>
-                    <div class="bio-media">
-                        <img src="images/armita-pose.jpeg" alt="Armita in practice pose">
-                    </div>
-                </div>
-            </section>
-
-            <!-- Classes Section -->
-            <section id="classes" class="section">
-                <h2 class="section-title">Signature Experiences</h2>
-                <div class="classes-grid">
-                    <div class="class-card">
-                        <div class="card-media">
-                            <img src="images/armita-pose-2.jpeg" alt="Yoga practice" />
-                        </div>
-                        <div class="card-body">
-                            <h3 class="class-title">Yoga</h3>
-                            <p class="section-content" style="padding-left:0;max-width:none;">Rooted alignment and breath-led sequencing. Slow power, precise attention, and postures that reorganize how you stand, move, and recover.</p>
-                        </div>
-                    </div>
-
-                    <div class="class-card">
-                        <div class="card-media">
-                            <img src="images/armita-pose-4.jpeg" alt="Yogalates flow" />
-                        </div>
-                        <div class="card-body">
-                            <h3 class="class-title">Yogalates</h3>
-                            <p class="section-content" style="padding-left:0;max-width:none;">Armita's signature fusion—yoga intelligence meets Pilates control. Dynamic, adaptive flows that build resilient strength without sacrificing ease.</p>
-                        </div>
-                    </div>
-
-                    <div class="class-card">
-                        <div class="card-media">
-                            <img src="images/armita-pose-6.jpeg" alt="Pilates strength" />
-                        </div>
-                        <div class="card-body">
-                            <h3 class="class-title">Pilates</h3>
-                            <p class="section-content" style="padding-left:0;max-width:none;">Core-first training with graceful mechanics. Sculpt, stabilize, and refine with sequences that respect joints and amplify performance.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Testimonials Section -->
-            <section id="testimonials" class="section">
-                <h2 class="section-title">Voices of Transformation</h2>
-                <div class="slider-container">
-                    <div class="testimonial">
-                        <p class="testimonial-text">"Armita doesn't just teach—she listens to what your body needs and responds with sequences that feel like they were designed specifically for your soul."</p>
-                        <p class="testimonial-author">— Sarah Chen, Architect</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Newsletter Section -->
-            <section id="newsletter" class="section">
-                <h2 class="section-title">Stay Connected to the Flow</h2>
-                <div style="text-align: center;">
-                    <p class="section-content" style="margin-bottom: 2rem;">Receive insights on movement, exclusive practice videos, and early access to Enhanced Practice sessions.</p>
-                    <form style="display: inline-block;">
-                        <input type="email" placeholder="Your email address" style="padding: 1rem 1.5rem; border: 1px solid rgba(30,42,38,0.25); border-radius: 25px; margin-right: 1rem; min-width: 300px; background: rgba(255,255,255,0.95);">
-                        <button type="submit" style="padding: 1rem 2rem; background: var(--golden-warmth); color: var(--dark); border: none; border-radius: 25px; cursor: pointer; font-weight: 600; box-shadow:none;">Join the Flow</button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- Ask Armita Section -->
-            <section id="ask-armita" class="section">
-                <h2 class="section-title">Ask Armita</h2>
-                <div style="text-align: center;">
-                    <p class="section-content" style="margin-bottom: 2rem;">Have questions about your practice? Armita responds personally to inquiries about movement, alignment, and the art of conscious strengthening.</p>
-                    <a href="mailto:armita@yogalates.com" class="hero-cta">Send Your Question</a>
-                </div>
-            </section>
-
-            <!-- Stress Relief Section -->
-            <section id="stressRelief" class="section">
-                <h2 class="section-title">Stress Relief</h2>
-                <div class="breathing-container"></div>
-            </section>
-
-            <!-- Enhanced Practices Section -->
-            <section id="enhancedPracticesPanel" class="section">
-                <h2 class="section-title enhanced-title">Enhanced Practices</h2>
-                <p class="section-content">Experimental and exclusive: selected clients gain access to forward‑looking experiences blending body intelligence with emerging tech. These services are offered by invitation only.</p>
-                
-                <div class="tech-features">
-                    <div class="flip-card">
-                        <div class="flip-inner">
-                            <div class="flip-face flip-front">
-                                <div class="thumb"><img src="images/online-analysis.png" alt="Online Body Analysis thumbnail"></div>
-                                <div class="label">Online Body Analysis</div>
-                            </div>
-                            <div class="flip-face flip-back">
-                                <h3>Online Body Analysis</h3>
-                                <p>Send a full‑body photo; we evaluate alignment and provide a tailored plan to refine posture, balance, and joint mechanics remotely.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card">
-                        <div class="flip-inner">
-                            <div class="flip-face flip-front">
-                                <div class="thumb"><img src="images/holograph.png" alt="Holographic Classes thumbnail"></div>
-                                <div class="label">Holographic Classes</div>
-                            </div>
-                            <div class="flip-face flip-back">
-                                <h3>Holographic Classes</h3>
-                                <p>An in‑room holographic Armita demonstrates, models corrections, and walks into class to guide precision in real time.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flip-card">
-                        <div class="flip-inner">
-                            <div class="flip-face flip-front">
-                                <div class="thumb"><img src="images/Banner.png" alt="FF Suggestions thumbnail"></div>
-                                <div class="label">FF‑Suggestions</div>
-                            </div>
-                            <div class="flip-face flip-back">
-                                <h3>FF‑Suggestions</h3>
-                                <p>Feather & Flow sends daily tips and micro‑drills that fit your schedule—gentle nudges that compound into real change.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer>
-                <div class="footer-content">
-                    <div class="social-links">
-                        <a href="#instagram">Instagram</a>
-                        <a href="#youtube">YouTube</a>
-                        <a href="#facebook">Facebook</a>
-                        <a href="#tiktok">TikTok</a>
-                        <a href="#email">Contact</a>
-                    </div>
-                    <p>&copy; 2024 Armita Yogalates. Where strength meets grace.</p>
-                </div>
-            </footer>
-        </div>
+<div id="surface">
+<header role="banner" aria-label="Primary">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Feather and Flow Home">
+      <span class="logo" aria-hidden="true">
+        <img src="assets/images/Logo_Single.svg" alt="Feather and Flow Logo" width="32" height="32">
+      </span>
+      <span>Feather and Flow</span>
+      <span class="pill">Awareness in body, joy in life</span>
+    </a>
+    <!-- Burger Menu Button -->
+    <div class="burger-menu" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stress-relief.html">Stress Relief</a></li>
+        <li><a class="btn cta" href="book-a-class.html">Book a Class</a></li>
+        <li class="login-nav">
+          <a href="login.html" class="login-link" aria-label="Login">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <!-- JavaScript Modules -->
-    <script src="js/performance-manager.js"></script>
-    <script src="js/wave-system.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/testimonials.js"></script>
-    <script src="js/effects.js"></script>
-    <script src="js/breathing-circle.js"></script>
+<main id="top" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero" style="background-image: url('assets/images/armita/_MG_2674.jpg');">
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="container content">
+      <div class="stack">
+        <span class="pill">Mindful Movement</span>
+        <span class="pill">Healing & Recovery</span>
+        <span class="pill">Yoga · Pilates</span>
+      </div>
+      <h1>Futuristic Movement & Healing</h1>
+      <p>Dynamic flows, precise alignment, and compassionate guidance for every body. From beginners to athletes, discover a clear progression that builds strength, mobility, and deep body awareness.</p>
+      <div class="actions">
+        <a href="#pre-launch" class="btn cta early-bird-hero" aria-label="Join early bird special">
+          <span class="btn-icon">🚀</span>
+          Early Bird Special
+          <span class="btn-badge">$51 OFF</span>
+        </a>
+        <a href="#offer" class="btn" aria-label="Explore classes">Explore Classes</a>
+        <a href="#about" class="btn ghost" aria-label="See who this is for">Who is this for?</a>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        console.log('🎬 Armita Yogalates - Camera System Active');
-    </script>
+  <!-- PAGE NAVIGATION -->
+  <section class="page-nav-section">
+    <div class="container">
+      <nav class="page-nav" aria-label="Page sections">
+        <ul>
+          <li><a href="#about">Who It's For</a></li>
+          <li><a href="#offer">What We Offer</a></li>
+          <li><a href="#voices">Voices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- WHO IS THIS FOR -->
+  <section id="about" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Who Is This For?</div>
+        <p class="muted">A supportive path for different goals and bodies.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <!-- 1 -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19c4-3 12-3 16 0" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="8" r="4" stroke="#059669" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Beginners & Intermediates</h3>
+          <p>Start strong with a clear progression that builds confidence, mobility, and control—without overwhelm.</p>
+        </article>
+        <!-- 2 -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="14" rx="3" stroke="#059669" stroke-width="2"/>
+              <path d="M7 20h10" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>All Ages Welcome</h3>
+          <p>From teens to seniors, practices adapt to your capacity and goals with safety-first progressions.</p>
+        </article>
+        <!-- 3 -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18M3 12h18" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Body-Conscious Individuals</h3>
+          <p>Develop nuanced body awareness and efficient movement patterns through mindful technique.</p>
+        </article>
+        <!-- 4 -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="#059669" stroke-width="2"/>
+              <path d="M12 8v8M8 12h8" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Wellness Seekers</h3>
+          <p>Improve sleep, focus, and vitality with balanced sessions linking breath, posture, and nervous-system care.</p>
+        </article>
+        <!-- 5 -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M6 12l3 3 9-9" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Healing & Recovery</h3>
+          <p>Smart modifications for pain, post-injury return, and long-term resilience—integrated with Pilates tools.</p>
+        </article>
+        <!-- 6 -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12h16M8 6h8M8 18h8" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Mindful Movement Enthusiasts</h3>
+          <p>For those seeking clarity in motion—blending yoga precision and Pilates strength with meditative focus.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section id="offer" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">What We Offer</div>
+        <p class="muted">Modular formats for individuals and groups.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M6 18c3-6 9-6 12 0" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="12" cy="7" r="3" stroke="#059669" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Yoga – Vinyasa Flow</h3>
+          <p>Dynamic, breath-led sequences to enhance flexibility, strength, and inner steadiness.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="5" width="16" height="12" rx="3" stroke="#059669" stroke-width="2"/>
+              <path d="M8 16c2-2 6-2 8 0" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Yogalates</h3>
+          <p>The precision of Pilates meets the flow of Yoga for balanced mobility and strength.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5v14" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Pilates</h3>
+          <p>Core-focused sessions enhancing posture and controlled power through precise progressions.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M6 7h12M6 12h12M6 17h8" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Group & Individual Classes</h3>
+          <p>Hands-on guidance in energising group formats or personalised one-to-one sessions.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M7 12c2-2 8-2 10 0M5 16c3-3 11-3 14 0" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Posture & Movement Adjustment</h3>
+          <p>Biomechanics-informed cues for safer technique, efficiency, and pain-free practice.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z" stroke="#059669" stroke-width="2"/>
+              <path d="M3 12h2m14 0h2M12 3v2m0 14v2" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Transformative Touch</h3>
+          <p>Supportive, hands-on adjustments for alignment, release, and a grounded nervous system.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section id="voices" class="testimonial-section reveal" aria-label="Testimonials">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Voices of Transformation</div>
+        <h2>What Our Community Says</h2>
+        <p class="muted">Real stories from real people on their wellness journey.</p>
+      </div>
+      
+      <div class="testimonial-slider">
+        <div class="progress-bar"></div>
+        <div class="testimonial-track">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-slide active">
+            <div class="testimonial-content">
+              <div class="testimonial-avatar">
+                <img src="assets/images/armita-pose-2.jpeg" alt="Sarah M." loading="lazy">
+              </div>
+              <div class="testimonial-text">
+                <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+                <blockquote>
+                  "The stress relief techniques I learned have completely transformed how I handle daily challenges. I sleep better, feel more centered, and have tools I can use anywhere, anytime. The personalized attention made all the difference."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-name">Sarah M.</div>
+                  <div class="author-title">Marketing Professional</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-avatar">
+                <div class="avatar-placeholder">MY</div>
+              </div>
+              <div class="testimonial-text">
+                <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+                <blockquote>
+                  "I had the honor of being a student in dear Armita's yoga classes for almost a year. A knowledgeable and compassionate teacher with deep body-anatomy insight, her classes are filled with positive energy. After an hour and a half of intensive practice, the joy of her class is multiplied with an amazing Shavasana."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-name">Mehrdad Yaghoubi</div>
+                  <div class="author-title">Long-time Student</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-avatar">
+                <img src="assets/images/armita-pose-4.jpeg" alt="Jennifer L." loading="lazy">
+              </div>
+              <div class="testimonial-text">
+                <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+                <blockquote>
+                  "As a beginner, I was nervous about starting yoga. But the welcoming environment and clear, patient instruction made me feel comfortable from day one. Six months later, I've gained flexibility, strength, and most importantly, confidence in my body."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-name">Jennifer L.</div>
+                  <div class="author-title">Yoga Beginner</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-avatar">
+                <div class="avatar-placeholder">DR</div>
+              </div>
+              <div class="testimonial-text">
+                <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+                <blockquote>
+                  "The Pilates sessions have been incredible for my posture and core strength. As someone who sits at a desk all day, I was experiencing chronic back pain. The targeted exercises and mindful approach have made a huge difference in my daily comfort."
+                </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-name">David R.</div>
+                  <div class="author-title">Software Engineer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-avatar">
+                <img src="assets/images/armita-pose-6.jpeg" alt="Maria C." loading="lazy">
+              </div>
+              <div class="testimonial-text">
+      <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
+      <blockquote>
+                  "After my injury, I thought I'd never be able to practice again. The therapeutic approach and careful modifications allowed me to rebuild my strength safely. I'm now stronger and more aware of my body than I was before the injury."
+      </blockquote>
+                <div class="testimonial-author">
+                  <div class="author-name">Maria C.</div>
+                  <div class="author-title">Recovery Journey</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="testimonial-controls">
+          <button class="testimonial-prev" aria-label="Previous testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="testimonial-dots">
+            <button class="dot active" data-slide="0" aria-label="Go to testimonial 1"></button>
+            <button class="dot" data-slide="1" aria-label="Go to testimonial 2"></button>
+            <button class="dot" data-slide="2" aria-label="Go to testimonial 3"></button>
+            <button class="dot" data-slide="3" aria-label="Go to testimonial 4"></button>
+            <button class="dot" data-slide="4" aria-label="Go to testimonial 5"></button>
+          </div>
+          <button class="testimonial-next" aria-label="Next testimonial">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRE-LAUNCH HYPE SECTION -->
+  <section id="pre-launch" class="pre-launch-section reveal" aria-label="Studio Opening">
+    <div class="container">
+      <div class="pre-launch-content">
+        <div class="launch-badge">
+          <span class="badge-text">🚀 STUDIO OPENING SOON</span>
+        </div>
+        <h2 class="launch-title">Our Physical Studio Opens in 2 Months!</h2>
+        <p class="launch-subtitle">Be among the first to experience our beautiful new wellness space. Early birds get exclusive benefits and special pricing.</p>
+        
+        <div class="countdown-timer" id="countdown-timer">
+          <div class="countdown-item">
+            <span class="countdown-number" id="days">60</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
+        <div class="early-bird-offers">
+          <div class="offer-grid">
+            <div class="offer-card highlight">
+              <div class="offer-badge">EARLY BIRD SPECIAL</div>
+              <h3>Founding Member</h3>
+              <div class="price">
+                <span class="original-price">$150/month</span>
+                <span class="sale-price">$99/month</span>
+              </div>
+              <ul class="offer-benefits">
+                <li>✨ Lifetime founding member rate</li>
+                <li>🎯 Priority class bookings</li>
+                <li>🎁 Welcome package & mat</li>
+                <li>👥 Exclusive member events</li>
+              </ul>
+              <a href="book-a-class.html#founding-member" class="btn cta">Secure Your Spot</a>
+            </div>
+            
+            <div class="offer-card">
+              <div class="offer-badge">LIMITED TIME</div>
+              <h3>Class Packages</h3>
+              <div class="price">
+                <span class="original-price">$200</span>
+                <span class="sale-price">$149</span>
+              </div>
+              <ul class="offer-benefits">
+                <li>📦 10-class package deal</li>
+                <li>⏰ Never expires</li>
+                <li>🔄 Transferable to friends</li>
+                <li>🏃‍♀️ Start immediately online</li>
+              </ul>
+              <a href="book-a-class.html#packages" class="btn">Get Package</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="launch-cta">
+          <p class="urgency-text">Only <strong>50 founding memberships</strong> available. <strong>23 already claimed!</strong></p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 46%"></div>
+          </div>
+          <div class="cta-buttons">
+            <a href="book-a-class.html" class="btn cta large">Join the Movement</a>
+            <a href="#about" class="btn ghost">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER ANCHOR -->
+  <section id="contact" class="reveal">
+    <div class="container" style="text-align:center">
+      <h2>Ready to move?</h2>
+      <p class="muted">For bookings, collaborations, or special programs, get in touch.</p>
+      <div class="stack" style="justify-content:center">
+        <a class="btn" href="mailto:hello@yogalates.example">Email Us</a>
+        <a class="btn ghost" href="#top">Back to top</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="classes" role="contentinfo">
+  <div class="container">
+    <div class="social" aria-label="Social links">
+      <a href="#" aria-label="Instagram" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="12" cy="12" r="3.5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube" title="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="7" width="18" height="10" rx="3" stroke="#6b7280" stroke-width="2"/>
+          <path d="M11 10l5 3-5 3v-6z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="#6b7280" stroke-width="2"/>
+          <path d="M13 8h2V6h-2a3 3 0 00-3 3v2H8v2h2v5h2v-5h2l1-2h-3V9a1 1 0 011-1z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="TikTok" title="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 7.5c1.1 1.6 2.9 2.5 5 2.5v2.5c-1.8.1-3.6-.6-5-1.9V15a5 5 0 11-3-4.6V12a2.5 2.5 0 102.5 2.5V6h2.5V7.5z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#contact" aria-label="Contact" title="Contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5h16v14H4z" stroke="#6b7280" stroke-width="2"/>
+          <path d="M4 8l8 5 8-5" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="links">
+      <a href="index.html">Home</a> ·
+      <a href="biography.html">Biography</a> ·
+      <a href="stress-relief.html">Stress Relief</a> ·
+      <a href="book-a-class.html">Book a Class</a>
+    </div>
+    <p class="copy">© <span id="year"></span> Feather and Flow. Where strength meets grace.</p>
+  </div>
+</footer>
+</div>
+
+<!-- External JavaScript files -->
+<script src="assets/js/smooth-scroll.js"></script>
+<script src="assets/js/reveal-animation.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/burger-menu.js"></script>
+<script src="assets/js/testimonials.js"></script>
+<script src="assets/js/countdown.js"></script>
+<script src="assets/js/wellness-waves.js"></script>
 </body>
 </html>

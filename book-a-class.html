@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Book a Class – Feather and Flow</title>
+<meta name="description" content="Book your yoga, Pilates, or Yogalates session with Feather and Flow. Individual and group classes available." />
+<meta name="color-scheme" content="light only" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- External CSS files -->
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/pre-launch.css">
+<!-- Responsive CSS files -->
+<link rel="stylesheet" href="assets/css/responsive/mobile.css">
+<link rel="stylesheet" href="assets/css/responsive/tablet.css">
+<link rel="stylesheet" href="assets/css/responsive/desktop.css">
+</head>
+<body>
+
+<!-- Wave Background Canvas -->
+<canvas id="waveCanvas" aria-hidden="true"></canvas>
+
+<div id="surface">
+<header role="banner" aria-label="Primary">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Feather and Flow Home">
+      <span class="logo" aria-hidden="true">
+        <img src="assets/images/Logo_Single.svg" alt="Feather and Flow Logo" width="32" height="32">
+      </span>
+      <span>Feather and Flow</span>
+      <span class="pill">Awareness in body, joy in life</span>
+    </a>
+    <!-- Burger Menu Button -->
+    <div class="burger-menu" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="biography.html">Biography</a></li>
+        <li><a href="stress-relief.html">Stress Relief</a></li>
+        <li><a class="btn cta active" href="book-a-class.html">Book a Class</a></li>
+        <li class="login-nav">
+          <a href="login.html" class="login-link" aria-label="Login">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero" style="background-image: url('assets/images/holographic-class.png');">
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="container content">
+      <div class="stack">
+        <span class="pill">Individual Sessions</span>
+        <span class="pill">Group Classes</span>
+        <span class="pill">Online & In-Person</span>
+      </div>
+      <h1>Book Your Session</h1>
+      <p>Choose from individual sessions, group classes, or specialized workshops. Find the perfect format for your wellness journey.</p>
+      <div class="actions">
+        <a href="#classes" class="btn" aria-label="View class options">View Classes</a>
+        <a href="#contact" class="btn ghost" aria-label="Contact for booking">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY BIRD ALERT -->
+  <section class="early-bird-alert" style="background: linear-gradient(135deg, var(--accent) 0%, #f59e0b 100%); color: white; padding: 20px 0; text-align: center;">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <span style="font-size: 1.2rem;">🚀</span>
+        <strong>STUDIO OPENING IN 2 MONTHS!</strong>
+        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">EARLY BIRD SPECIALS BELOW</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDING MEMBER SPECIAL -->
+  <section id="founding-member" class="founding-member-section" style="background: var(--paper); padding: 60px 0;">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" style="color: var(--accent);">⭐ FOUNDING MEMBER SPECIAL</div>
+        <h2>Be a Studio Founder</h2>
+        <p class="muted">Join our exclusive founding member community and lock in special rates for life.</p>
+      </div>
+      
+      <div class="founding-offer" style="max-width: 800px; margin: 0 auto;">
+        <div class="offer-comparison" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0;">
+          <div class="regular-pricing" style="background: #f8f9fa; padding: 32px; border-radius: 12px; text-align: center; opacity: 0.7;">
+            <h3 style="margin: 0 0 16px; color: var(--muted);">Regular Membership</h3>
+            <div class="price" style="font-size: 2.5rem; font-weight: 700; color: var(--muted); margin: 16px 0;">$150<span style="font-size: 1rem;">/month</span></div>
+            <p style="color: var(--muted); margin: 0;">Starting after grand opening</p>
+          </div>
+          
+          <div class="founding-pricing" style="background: linear-gradient(135deg, var(--brand) 0%, var(--brand-hover) 100%); padding: 32px; border-radius: 12px; text-align: center; color: white; position: relative; transform: scale(1.05);">
+            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 600;">FOUNDING MEMBER</div>
+            <h3 style="margin: 0 0 16px;">Your Rate Forever</h3>
+            <div class="price" style="font-size: 2.5rem; font-weight: 700; margin: 16px 0;">$99<span style="font-size: 1rem;">/month</span></div>
+            <p style="margin: 0; opacity: 0.9;">Lock in this rate for life!</p>
+          </div>
+        </div>
+        
+        <div class="founding-benefits" style="background: white; padding: 40px; border-radius: 16px; box-shadow: var(--shadow-lg); margin: 32px 0;">
+          <h3 style="text-align: center; margin: 0 0 32px; color: var(--ink);">Founding Member Exclusive Benefits</h3>
+          <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+            <div class="benefit-item" style="display: flex; align-items: flex-start; gap: 12px;">
+              <span style="color: var(--brand); font-size: 1.2rem;">✨</span>
+              <div>
+                <strong>Lifetime Rate Lock</strong>
+                <p style="margin: 4px 0 0; color: var(--muted); font-size: 14px;">Your $99/month rate never increases, even as regular prices rise</p>
+              </div>
+            </div>
+            <div class="benefit-item" style="display: flex; align-items: flex-start; gap: 12px;">
+              <span style="color: var(--brand); font-size: 1.2rem;">🎯</span>
+              <div>
+                <strong>Priority Booking</strong>
+                <p style="margin: 4px 0 0; color: var(--muted); font-size: 14px;">Get first access to popular class times and special workshops</p>
+              </div>
+            </div>
+            <div class="benefit-item" style="display: flex; align-items: flex-start; gap: 12px;">
+              <span style="color: var(--brand); font-size: 1.2rem;">🎁</span>
+              <div>
+                <strong>Welcome Package</strong>
+                <p style="margin: 4px 0 0; color: var(--muted); font-size: 14px;">Premium yoga mat, water bottle, and branded wellness kit</p>
+              </div>
+            </div>
+            <div class="benefit-item" style="display: flex; align-items: flex-start; gap: 12px;">
+              <span style="color: var(--brand); font-size: 1.2rem;">👥</span>
+              <div>
+                <strong>Exclusive Events</strong>
+                <p style="margin: 4px 0 0; color: var(--muted); font-size: 14px;">Members-only workshops, retreats, and community gatherings</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="founding-cta" style="text-align: center; margin: 32px 0;">
+          <p style="margin: 0 0 16px; color: var(--muted);"><strong>Only 50 founding memberships available</strong> • <span style="color: var(--accent);">27 spots remaining</span></p>
+          <div class="progress-bar" style="width: 300px; height: 8px; background: var(--border); border-radius: 4px; margin: 16px auto; overflow: hidden;">
+            <div class="progress-fill" style="width: 46%; height: 100%; background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 100%); border-radius: 4px;"></div>
+          </div>
+          <a href="mailto:hello@featherandflow.com?subject=Founding Member Interest" class="btn cta" style="font-size: 18px; padding: 16px 32px; margin: 16px 8px;">Secure Your Founding Membership</a>
+          <p style="font-size: 12px; color: var(--muted); margin: 16px 0 0;">Start with online classes immediately, studio access when we open</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS OPTIONS -->
+  <section id="classes" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Class Options</div>
+        <h2>Choose Your Experience</h2>
+        <p class="muted">Flexible options to fit your schedule and preferences.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="#059669" stroke-width="2"/>
+              <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" stroke="#059669" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Individual Sessions</h3>
+          <p>One-on-one personalized instruction tailored to your specific needs, goals, and body.</p>
+          <ul style="text-align: left; color: var(--muted); line-height: 1.6; margin-top: 16px;">
+            <li>60-minute sessions</li>
+            <li>Customized approach</li>
+            <li>Hands-on adjustments</li>
+            <li>Progress tracking</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <span style="color: var(--muted); text-decoration: line-through; font-size: 14px;">$120</span>
+            <strong style="color: var(--brand); margin-left: 8px;">$99 per session</strong>
+            <div style="background: var(--accent); color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; display: inline-block; margin-top: 8px;">EARLY BIRD PRICE</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#059669" stroke-width="2"/>
+              <circle cx="9" cy="7" r="4" stroke="#059669" stroke-width="2"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#059669" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Small Group Classes</h3>
+          <p>Intimate group settings with 4-6 participants for personalized attention in a community atmosphere.</p>
+          <ul style="text-align: left; color: var(--muted); line-height: 1.6; margin-top: 16px;">
+            <li>75-minute classes</li>
+            <li>4-6 participants max</li>
+            <li>Individual modifications</li>
+            <li>Community support</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <strong style="color: var(--brand);">$45 per class</strong>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#059669" stroke-width="2"/>
+              <line x1="8" y1="21" x2="16" y2="21" stroke="#059669" stroke-width="2"/>
+              <line x1="12" y1="17" x2="12" y2="21" stroke="#059669" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Online Sessions</h3>
+          <p>Join from anywhere with live virtual classes or personalized online sessions via video call.</p>
+          <ul style="text-align: left; color: var(--muted); line-height: 1.6; margin-top: 16px;">
+            <li>Live interactive sessions</li>
+            <li>HD video quality</li>
+            <li>Real-time guidance</li>
+            <li>Flexible scheduling</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <span style="color: var(--muted); text-decoration: line-through; font-size: 14px;">$35</span>
+            <strong style="color: var(--brand); margin-left: 8px;">$25 per class</strong>
+            <div style="background: var(--accent); color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; display: inline-block; margin-top: 8px;">EARLY BIRD PRICE</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASS TYPES -->
+  <section id="class-types" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Class Types</div>
+        <h2>What We Offer</h2>
+        <p class="muted">Diverse movement practices for every body and goal.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Vinyasa Flow Yoga</h3>
+          <p>Dynamic, breath-synchronized sequences that build strength, flexibility, and mindfulness. Perfect for those who enjoy flowing movement.</p>
+        </article>
+
+        <article class="card">
+          <h3>Yogalates Fusion</h3>
+          <p>The best of both worlds - combining yoga's flexibility and mindfulness with Pilates' precision and core strength.</p>
+        </article>
+
+        <article class="card">
+          <h3>Pilates Mat Work</h3>
+          <p>Core-focused sessions that improve posture, stability, and controlled movement patterns through precise, mindful exercises.</p>
+        </article>
+
+        <article class="card">
+          <h3>Restorative & Stress Relief</h3>
+          <p>Gentle, supported practices designed for deep relaxation, stress reduction, and nervous system restoration.</p>
+        </article>
+
+        <article class="card">
+          <h3>Therapeutic Movement</h3>
+          <p>Specialized sessions for injury recovery, chronic pain management, and movement rehabilitation with careful attention to limitations.</p>
+        </article>
+
+        <article class="card">
+          <h3>Workshops & Intensives</h3>
+          <p>Deeper dives into specific topics like breathwork, meditation, anatomy, or advanced movement patterns.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" class="quote-wrap reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Package Deals</div>
+        <h2>Save with Packages</h2>
+        <p class="muted">Commit to your practice and save on multiple sessions.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>4-Session Package</h3>
+          <p><strong>Individual:</strong> $440 <span style="color: var(--muted);">(Save $40)</span></p>
+          <p><strong>Group:</strong> $160 <span style="color: var(--muted);">(Save $20)</span></p>
+        </article>
+
+        <article class="card">
+          <h3>8-Session Package</h3>
+          <p><strong>Individual:</strong> $840 <span style="color: var(--muted);">(Save $120)</span></p>
+          <p><strong>Group:</strong> $320 <span style="color: var(--muted);">(Save $40)</span></p>
+        </article>
+
+        <article class="card">
+          <h3>Monthly Unlimited</h3>
+          <p><strong>Group Classes:</strong> $150</p>
+          <p style="color: var(--muted); font-size: 14px;">Unlimited small group classes for one month</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Ready to Book?</div>
+        <h2>Let's Get Started</h2>
+        <p class="muted">Contact me to schedule your session or ask any questions.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Book Your Session</h3>
+          <p>Ready to start? Send me a message with your preferred class type, format, and availability.</p>
+          <div style="margin-top: 20px;">
+            <a class="btn" href="mailto:hello@featherandflow.com?subject=Class Booking Inquiry">Email to Book</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Have Questions?</h3>
+          <p>Not sure which option is right for you? Let's chat about your goals and find the perfect fit.</p>
+          <div style="margin-top: 20px;">
+            <a class="btn ghost" href="mailto:hello@featherandflow.com?subject=Question About Classes">Ask a Question</a>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <p class="muted">All sessions include personalized attention, modifications for your body, and a supportive, non-judgmental environment.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="social" aria-label="Social links">
+      <a href="#" aria-label="Instagram" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="12" cy="12" r="3.5" stroke="#6b7280" stroke-width="2"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube" title="YouTube">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="3" y="7" width="18" height="10" rx="3" stroke="#6b7280" stroke-width="2"/>
+          <path d="M11 10l5 3-5 3v-6z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="#6b7280" stroke-width="2"/>
+          <path d="M13 8h2V6h-2a3 3 0 00-3 3v2H8v2h2v5h2v-5h2l1-2h-3V9a1 1 0 011-1z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="TikTok" title="TikTok">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M14 7.5c1.1 1.6 2.9 2.5 5 2.5v2.5c-1.8.1-3.6-.6-5-1.9V15a5 5 0 11-3-4.6V12a2.5 2.5 0 102.5 2.5V6h2.5V7.5z" fill="#6b7280"/>
+        </svg>
+      </a>
+      <a href="#contact" aria-label="Contact" title="Contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5h16v14H4z" stroke="#6b7280" stroke-width="2"/>
+          <path d="M4 8l8 5 8-5" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+    <div class="links">
+      <a href="index.html">Home</a> ·
+      <a href="biography.html">Biography</a> ·
+      <a href="stress-relief.html">Stress Relief</a> ·
+      <a href="book-a-class.html">Book a Class</a>
+    </div>
+    <p class="copy">© <span id="year"></span> Feather and Flow. Where strength meets grace.</p>
+  </div>
+</footer>
+
+</div>
+
+<!-- External JavaScript files -->
+<script src="assets/js/smooth-scroll.js"></script>
+<script src="assets/js/reveal-animation.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/burger-menu.js"></script>
+<script src="assets/js/countdown.js"></script>
+<script src="assets/js/wellness-waves.js"></script>
+</body>
+</html>
