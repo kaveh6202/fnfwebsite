@@ -8,7 +8,7 @@ class BreathingPractices {
         this.breathCount = document.getElementById('breathCount');
         this.phasePill = document.getElementById('phasePill');
         this.patternPill = document.getElementById('patternPill');
-        this.progressRing = this.breathingCircle.querySelector('.progress-ring-circle');
+        this.progressRing = null; // Will be set after modal opens
         this.sessionTimer = document.getElementById('sessionTimer');
         this.cycleCount = document.getElementById('cycleCount');
         this.totalCycles = document.getElementById('totalCycles');
@@ -289,6 +289,12 @@ class BreathingPractices {
         // Update technique details
         this.updateTechniqueDetails(technique);
         
+        // Initialize progress ring after DOM is ready
+        setTimeout(() => {
+            this.progressRing = this.breathingCircle.querySelector('.progress-ring-circle');
+            this.resetProgressRing();
+        }, 100);
+        
         // Update guidance
         this.guidanceText.textContent = technique.description + '. Click play when ready.';
     }
@@ -318,6 +324,27 @@ class BreathingPractices {
         
         this.updatePlayPauseButton();
         this.startBreathingLoop();
+        this.startProgressRingAnimation();
+        
+        this.guidanceText.textContent = 'Focus on your breath and follow the visual guide.';
+    }
+    
+    resumePractice() {
+        if (!this.currentTechnique) return;
+        
+        this.isActive = true;
+        this.isPaused = false;
+        
+        if (!this.sessionStartTime) {
+            this.sessionStartTime = Date.now();
+            this.currentPhase = 0;
+            this.phaseTimer = 0;
+            this.cycleCounter = 0;
+        }
+        
+        this.updatePlayPauseButton();
+        this.startBreathingLoop();
+        this.startProgressRingAnimation();
         
         this.guidanceText.textContent = 'Focus on your breath and follow the visual guide.';
     }
@@ -331,6 +358,12 @@ class BreathingPractices {
             this.animationFrame = null;
         }
         
+        // Cancel smooth progress ring animation
+        if (this.progressAnimationFrame) {
+            cancelAnimationFrame(this.progressAnimationFrame);
+            this.progressAnimationFrame = null;
+        }
+        
         this.guidanceText.textContent = 'Practice paused. Click play to continue.';
     }
     
@@ -342,6 +375,12 @@ class BreathingPractices {
         if (this.animationFrame) {
             cancelAnimationFrame(this.animationFrame);
             this.animationFrame = null;
+        }
+        
+        // Cancel smooth progress ring animation
+        if (this.progressAnimationFrame) {
+            cancelAnimationFrame(this.progressAnimationFrame);
+            this.progressAnimationFrame = null;
         }
         
         this.updatePlayPauseButton();
@@ -364,9 +403,6 @@ class BreathingPractices {
         this.phasePill.textContent = 'Get Ready';
         this.phasePill.className = 'phase-pill';
         
-        // Reset progress ring
-        this.progressRing.style.strokeDashoffset = this.getCircumference().toString();
-        
         if (this.currentTechnique) {
             this.guidanceText.textContent = this.currentTechnique.description + '. Click play when ready.';
         }
@@ -378,24 +414,11 @@ class BreathingPractices {
         const technique = this.currentTechnique;
         const currentPhaseData = technique.phases[this.currentPhase];
         
-        // Update circle class
-        this.breathingCircle.className = `breathing-circle ${currentPhaseData.class}`;
-        
-        // Update countdown
-        this.breathCount.textContent = Math.ceil(currentPhaseData.duration - this.phaseTimer);
-        
-        // Update circular progress
-        this.updateCircularProgress(currentPhaseData.duration, this.phaseTimer);
-        
-        // Update phase pill with instruction
-        this.phasePill.textContent = currentPhaseData.instruction;
-        this.phasePill.className = `phase-pill ${currentPhaseData.class}`;
-        
-        // Update timers
+        // Update timers first
         this.phaseTimer += 0.1;
         this.sessionDuration += 0.1;
         
-        // Check if phase is complete
+        // Check if phase is complete after timer update
         if (this.phaseTimer >= currentPhaseData.duration) {
             this.phaseTimer = 0;
             this.currentPhase++;
@@ -413,13 +436,45 @@ class BreathingPractices {
             }
         }
         
-        this.updateDisplay();
-        this.updateProgress();
+        // Get current phase data (might be new after transition)
+        const activePhaseData = technique.phases[this.currentPhase];
+        
+        // Update all visuals with current state
+        this.breathingCircle.className = `breathing-circle ${activePhaseData.class}`;
+        this.breathCount.textContent = Math.ceil(activePhaseData.duration - this.phaseTimer);
+        this.phasePill.textContent = activePhaseData.instruction;
+        this.phasePill.className = `phase-pill ${activePhaseData.class}`;
+        
+        // Update session-level progress (not circular progress)
+        this.cycleCount.textContent = this.cycleCounter;
+        if (this.currentTechnique) {
+            const totalPhases = this.currentTechnique.cycles * this.currentTechnique.phases.length;
+            const completedPhases = (this.cycleCounter * this.currentTechnique.phases.length) + this.currentPhase;
+            const progress = (completedPhases / totalPhases) * 100;
+            this.progressFill.style.width = `${Math.min(progress, 100)}%`;
+        }
         this.updateSessionTimer();
         
         // Continue loop
         this.animationFrame = requestAnimationFrame(() => {
             setTimeout(() => this.startBreathingLoop(), 100);
+        });
+    }
+    
+    startProgressRingAnimation() {
+        if (!this.isActive || this.isPaused || !this.progressRing) return;
+        
+        const technique = this.currentTechnique;
+        if (!technique) return;
+        
+        const currentPhaseData = technique.phases[this.currentPhase];
+        
+        // Update progress ring with current timer state
+        this.updateProgressRing(currentPhaseData.duration, this.phaseTimer);
+        
+        // Continue smooth animation at 60fps
+        this.progressAnimationFrame = requestAnimationFrame(() => {
+            this.startProgressRingAnimation();
         });
     }
     
@@ -430,9 +485,6 @@ class BreathingPractices {
         this.breathCount.textContent = '✓';
         this.phasePill.textContent = 'Complete!';
         this.phasePill.className = 'phase-pill';
-        
-        // Complete progress ring
-        this.progressRing.style.strokeDashoffset = '0';
         
         this.guidanceText.textContent = `Great job! You completed ${this.currentTechnique.cycles} cycles of ${this.currentTechnique.name}.`;
         
@@ -523,27 +575,29 @@ class BreathingPractices {
         return durations.join('-');
     }
 
-    updateCircularProgress(duration, elapsed) {
+    updateProgressRing(duration, elapsed) {
+        if (!this.progressRing) return;
+        
         // Calculate progress (0 to 1)
         const progress = elapsed / duration;
         
-        // Get circumference based on current screen size
-        const circumference = this.getCircumference();
+        // Get circumference (2π × radius) - Updated for new responsive SVG
+        const circumference = 609.13; // 2 * Math.PI * 97
         
-        // For new phases (elapsed = 0), start with full ring
-        // As time progresses, ring empties (offset increases)
-        const offset = circumference * (1 - progress);
+        // Calculate offset (ring starts at 0 and increases as time progresses)
+        // When progress = 0: offset = 0 (full ring visible)
+        // When progress = 1: offset = circumference (no ring visible)
+        const offset = progress * circumference;
         
         // Update the progress ring
         this.progressRing.style.strokeDashoffset = offset.toString();
     }
 
-    getCircumference() {
-        // Check if mobile size (matching CSS media query)
-        if (window.innerWidth <= 768) {
-            return 502.65; // 2 * π * 80
-        }
-        return 628.32; // 2 * π * 100
+    resetProgressRing() {
+        if (!this.progressRing) return;
+        
+        // Reset to full ring (0 offset means full circle visible)
+        this.progressRing.style.strokeDashoffset = '0';
     }
     
     backToSelection() {

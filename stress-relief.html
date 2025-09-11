@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/layout.css">
 <link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/modal-base.css">
 <link rel="stylesheet" href="assets/css/breathing-modal.css">
 <link rel="stylesheet" href="assets/css/yoga-modal.css">
 <!-- Responsive CSS files -->
@@ -227,7 +228,7 @@
 </main>
 
 <!-- Breathing Practices Modal -->
-<div id="breathingModal" class="breathing-modal" aria-hidden="true">
+<div id="breathingModal" class="breathing-modal modal-base" aria-hidden="true">
   <div class="modal-overlay" onclick="closeBreathingModal()"></div>
   <div class="modal-content">
     <div class="modal-header">
@@ -303,18 +304,19 @@
           <div class="circle-inner">
             <div class="breath-count" id="breathCount">4</div>
           </div>
-          <svg class="progress-ring" width="206" height="206">
+          <svg class="progress-ring" width="100%" height="100%" viewBox="0 0 200 200">
             <circle
               class="progress-ring-circle"
-              cx="103"
-              cy="103"
-              r="100"
+              cx="100"
+              cy="100"
+              r="97"
               fill="transparent"
-              stroke="currentColor"
+              stroke="var(--brand)"
               stroke-width="4"
-              stroke-dasharray="628.32"
-              stroke-dashoffset="628.32"
-              transform="rotate(-90 103 103)"
+              stroke-dasharray="609.13"
+              stroke-dashoffset="0"
+              stroke-linecap="round"
+              transform="rotate(-90 100 100)"
             />
           </svg>
         </div>
@@ -432,7 +434,7 @@
 </div>
 
   <!-- Yoga Modal -->
-  <div class="yoga-modal" id="yogaModal" aria-hidden="true" role="dialog" aria-labelledby="yogaModalTitle">
+  <div class="yoga-modal modal-base" id="yogaModal" aria-hidden="true" role="dialog" aria-labelledby="yogaModalTitle">
     <div class="modal-overlay" onclick="closeYogaModal()"></div>
     <div class="modal-content">
       <div class="modal-header">

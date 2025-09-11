@@ -257,4 +257,61 @@
     padding: 14px 16px;
     font-size: 15px;
   }
+
+  /* Founding Member Section - Mobile Responsive */
+  .founding-member-section .founding-offer {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 16px;
+  }
+
+  .founding-member-section .offer-comparison {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    margin: 24px 0 !important;
+  }
+
+  .founding-member-section .regular-pricing,
+  .founding-member-section .founding-pricing {
+    padding: 24px 16px !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .founding-member-section .founding-pricing {
+    transform: none !important;
+    position: relative !important;
+  }
+
+  .founding-member-section .price {
+    font-size: 2rem !important;
+  }
+
+  .founding-member-section .founding-benefits {
+    padding: 24px 16px !important;
+    margin: 24px 0 !important;
+  }
+
+  .founding-member-section .benefits-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .founding-member-section .benefit-item {
+    gap: 8px !important;
+  }
+
+  .founding-member-section .section-head {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .founding-member-section .section-head h2 {
+    font-size: 1.8rem;
+  }
+
+  .founding-member-section .section-head p {
+    font-size: 0.9rem;
+  }
 }

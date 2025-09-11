@@ -1,88 +1,9 @@
 /* ===== YOGA MODAL STYLES ===== */
+/* Extends modal-base styles - only unique yoga modal styles */
 
-/* Modal Base */
-.yoga-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.yoga-modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.yoga-modal .modal-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-}
-
+/* Yoga Modal Specific Overrides */
 .yoga-modal .modal-content {
-  position: relative;
-  background: white;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 900px;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-}
-
-.yoga-modal.active .modal-content {
-  transform: scale(1);
-}
-
-/* Modal Header */
-.yoga-modal .modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 32px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.yoga-modal .modal-header h2 {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.yoga-modal .modal-close {
-  background: none;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--muted);
-  transition: all 0.2s ease;
-}
-
-.yoga-modal .modal-close:hover {
-  background: rgba(5, 150, 105, 0.1);
-  color: var(--brand);
-  transform: rotate(90deg);
+  max-width: 900px; /* Wider than base for video grid */
 }
 
 /* Category Selection */
@@ -90,14 +11,6 @@
   padding: 32px;
   overflow-y: auto;
   max-height: calc(90vh - 100px);
-}
-
-.yoga-modal .modal-subtitle {
-  text-align: center;
-  font-size: 18px;
-  color: var(--muted);
-  margin-bottom: 32px;
-  font-weight: 500;
 }
 
 .category-grid {
@@ -203,25 +116,6 @@
   border-bottom: 1px solid rgba(5, 150, 105, 0.1);
 }
 
-.video-header .back-btn {
-  background: none;
-  border: 2px solid var(--brand);
-  color: var(--brand);
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.video-header .back-btn:hover {
-  background: var(--brand);
-  color: white;
-  transform: translateX(-4px);
-}
-
 .video-header h3 {
   margin: 0;
   font-size: 24px;
@@ -309,22 +203,12 @@
   font-weight: 600;
 }
 
-/* Animations - Matching breathing modal style */
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .yoga-modal .modal-content {
     max-width: 95vw;
     max-height: 95vh;
     margin: 20px;
-  }
-
-  .yoga-modal .modal-header {
-    padding: 20px 24px;
-  }
-
-  .yoga-modal .modal-header h2 {
-    font-size: 24px;
   }
 
   .yoga-categories,
@@ -362,18 +246,6 @@
 }
 
 @media (max-width: 480px) {
-  .yoga-modal .modal-content {
-    border-radius: 16px;
-  }
-
-  .yoga-modal .modal-header {
-    padding: 16px 20px;
-  }
-
-  .yoga-modal .modal-header h2 {
-    font-size: 20px;
-  }
-
   .yoga-categories,
   .yoga-videos {
     padding: 20px 16px;

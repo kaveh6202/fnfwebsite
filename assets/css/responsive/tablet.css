@@ -189,4 +189,29 @@
   .auth-header h1 {
     font-size: 26px;
   }
+
+  /* Founding Member Section - Tablet Responsive */
+  .founding-member-section .founding-offer {
+    max-width: 90% !important;
+    padding: 0 24px;
+  }
+
+  .founding-member-section .offer-comparison {
+    gap: 20px !important;
+    margin: 32px 0 !important;
+  }
+
+  .founding-member-section .regular-pricing,
+  .founding-member-section .founding-pricing {
+    padding: 28px 20px !important;
+  }
+
+  .founding-member-section .founding-benefits {
+    padding: 32px 24px !important;
+  }
+
+  .founding-member-section .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+  }
 }
