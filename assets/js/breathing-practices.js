@@ -619,18 +619,30 @@ function openBreathingModal() {
 function closeBreathingModal() {
     if (breathingPractices) {
         breathingPractices.closeModal();
+        // Clear URL parameters when modal is closed
+        updateUrl();
     }
 }
 
 function startTechnique(techniqueId) {
     if (breathingPractices) {
         breathingPractices.startTechnique(techniqueId);
+        // Update URL to reflect current technique
+        updateUrl(techniqueId);
     }
 }
 
 function togglePractice() {
     if (breathingPractices) {
         breathingPractices.togglePractice();
+        
+        // Update URL to reflect if practice is starting
+        const technique = getUrlParameter('technique');
+        if (technique && breathingPractices.isActive) {
+            updateUrl(technique, 'start');
+        } else if (technique) {
+            updateUrl(technique);
+        }
     }
 }
 
@@ -643,14 +655,75 @@ function resetPractice() {
 function backToSelection() {
     if (breathingPractices) {
         breathingPractices.backToSelection();
+        // Clear technique from URL when going back to selection
+        updateUrl();
+    }
+}
+
+// URL Routing Functions
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+function updateUrl(technique = null, action = null) {
+    const url = new URL(window.location);
+    
+    if (technique) {
+        url.searchParams.set('technique', technique);
+    } else {
+        url.searchParams.delete('technique');
+    }
+    
+    if (action) {
+        url.searchParams.set('action', action);
+    } else {
+        url.searchParams.delete('action');
+    }
+    
+    // Update URL without page reload
+    window.history.replaceState({}, '', url);
+}
+
+function handleUrlRouting() {
+    const technique = getUrlParameter('technique');
+    const action = getUrlParameter('action');
+    
+    if (technique) {
+        // Initialize breathing practices if not already done
+        if (!breathingPractices) {
+            breathingPractices = new BreathingPractices();
+        }
+        
+        // Valid technique IDs
+        const validTechniques = ['box', 'stress-relief', 'energizing', 'coherent', 'triangle', 'extended-exhale'];
+        
+        if (validTechniques.includes(technique)) {
+            // Open modal and start technique
+            breathingPractices.openModal();
+            
+            // Small delay to ensure modal is fully open
+            setTimeout(() => {
+                breathingPractices.startTechnique(technique);
+                
+                // If action is 'start', automatically begin the practice
+                if (action === 'start') {
+                    setTimeout(() => {
+                        breathingPractices.togglePractice();
+                    }, 500);
+                }
+            }, 100);
+        }
     }
 }
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        // Breathing practices will be initialized when modal is first opened
+        // Check URL for routing parameters
+        handleUrlRouting();
     });
 } else {
-    // DOM is already ready
+    // DOM is already ready, handle routing immediately
+    handleUrlRouting();
 }

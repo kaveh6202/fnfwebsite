@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="assets/css/modal-base.css">
 <link rel="stylesheet" href="assets/css/breathing-modal.css">
 <link rel="stylesheet" href="assets/css/yoga-modal.css">
+<link rel="stylesheet" href="assets/css/wellness-tips.css">
 <!-- Responsive CSS files -->
 <link rel="stylesheet" href="assets/css/responsive/mobile.css">
 <link rel="stylesheet" href="assets/css/responsive/tablet.css">
@@ -200,17 +201,274 @@
     </div>
   </section>
 
-  <!-- TESTIMONIAL -->
-  <section class="quote-wrap reveal" aria-label="Testimonial">
-    <div class="container quote">
+  <!-- WELLNESS TIPS SLIDER -->
+  <section class="wellness-tips-section reveal" aria-label="Wellness Tips">
+    <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Client Experience</div>
+        <div class="eyebrow">Wellness Tips & Insights</div>
+        <h2>Your Daily Wellness Toolkit</h2>
+        <p class="muted">Practical tips and techniques to enhance your stress relief practice.</p>
       </div>
-      <div class="stars" aria-hidden="true">★ ★ ★ ★ ★</div>
-      <blockquote>
-        "The stress relief techniques I learned have completely transformed how I handle daily challenges. I sleep better, feel more centered, and have tools I can use anywhere, anytime."
-      </blockquote>
-      <span class="cite">— Sarah M.</span>
+      
+      <div class="wellness-tips-slider">
+        <div class="progress-bar"></div>
+        <button class="wellness-tips-play-pause" aria-label="Pause slideshow">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+            <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+          </svg>
+        </button>
+        <div class="wellness-tips-track">
+          <!-- Tip 1: Breathwork -->
+          <div class="wellness-tip-slide active">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🫁</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Breathwork</span>
+                <h3>4-7-8 Breathing for Instant Calm</h3>
+                <p>This powerful technique activates your parasympathetic nervous system in just 3 cycles. Inhale for 4 counts, hold for 7, exhale for 8. Perfect for moments of acute stress or before sleep.</p>
+                <div class="tip-action">Try it right now: breathe in... hold... and release slowly.</div>
+                <div class="tip-link">
+                  <a href="?technique=stress-relief" class="practice-link">🎯 Practice 4-7-8 Breathing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 2: Body Awareness -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🧘‍♀️</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Body Awareness</span>
+                <h3>Progressive Muscle Relaxation</h3>
+                <p>Start from your toes and work up to your head. Tense each muscle group for 5 seconds, then release completely. Notice the contrast between tension and relaxation.</p>
+                <div class="tip-action">Best practiced in bed before sleep or during work breaks.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 3: Gentle Flow -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🌊</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Gentle Flow</span>
+                <h3>Cat-Cow Stretch for Spinal Relief</h3>
+                <p>This simple movement releases tension in your spine and neck. Move slowly, breathing deeply with each transition. Perfect for counteracting long periods of sitting.</p>
+                <div class="tip-action">Hold each position for 3-5 breaths, repeat 5-8 times.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 4: Restorative -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🛋️</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Restorative</span>
+                <h3>Legs-Up-The-Wall Pose</h3>
+                <p>Lie on your back with legs up against a wall. This gentle inversion calms the nervous system, reduces swelling, and eases anxiety. Stay for 5-15 minutes.</p>
+                <div class="tip-action">Use a pillow under your lower back for extra comfort.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 5: Mindfulness -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🧠</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Mindfulness</span>
+                <h3>5-4-3-2-1 Grounding Technique</h3>
+                <p>When anxiety strikes, notice: 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste. This brings you back to the present moment.</p>
+                <div class="tip-action">Practice this anywhere, anytime you feel overwhelmed.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 6: Sleep -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">😴</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Sleep & Recovery</span>
+                <h3>Evening Wind-Down Routine</h3>
+                <p>Create a consistent pre-sleep ritual: dim lights 1 hour before bed, practice gentle stretches, avoid screens, and try deep breathing or meditation.</p>
+                <div class="tip-action">Consistency is key - your body will learn to prepare for rest.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 7: Movement -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🚶‍♀️</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Mindful Movement</span>
+                <h3>Walking Meditation</h3>
+                <p>Transform daily walks into stress relief. Focus on each step, the feeling of your feet touching the ground, and your breath. Even 5 minutes can shift your mental state.</p>
+                <div class="tip-action">Try walking without music or podcasts - just you and your breath.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 8: Breathwork Advanced -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">💨</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Breathwork</span>
+                <h3>Box Breathing for Focus</h3>
+                <p>Inhale for 4, hold for 4, exhale for 4, hold empty for 4. This technique, used by Navy SEALs, enhances focus and reduces stress hormones.</p>
+                <div class="tip-action">Perfect before important meetings or challenging situations.</div>
+                <div class="tip-link">
+                  <a href="?technique=box" class="practice-link">🎯 Practice Box Breathing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 9: Posture -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🏃‍♂️</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Body Awareness</span>
+                <h3>Desk Posture Reset</h3>
+                <p>Every hour, check in: feet flat on floor, shoulders away from ears, crown of head reaching up. Take 3 deep breaths and roll your shoulders back.</p>
+                <div class="tip-action">Set a gentle reminder to prevent chronic tension buildup.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 10: Stress Response -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">⚡</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Stress Response</span>
+                <h3>The STOP Technique</h3>
+                <p>When stress peaks: <strong>S</strong>top what you're doing, <strong>T</strong>ake a breath, <strong>O</strong>bserve your thoughts and feelings, <strong>P</strong>roceed with awareness.</p>
+                <div class="tip-action">This creates space between trigger and reaction.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 11: Hydration -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">💧</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Wellness Basics</span>
+                <h3>Mindful Hydration</h3>
+                <p>Dehydration increases cortisol (stress hormone). Drink water mindfully - feel the temperature, notice the sensation of swallowing. Aim for pale yellow urine as a hydration guide.</p>
+                <div class="tip-action">Start each day with a glass of water before coffee or tea.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 12: Gentle Yoga -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🧘</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Gentle Flow</span>
+                <h3>Child's Pose Variation</h3>
+                <p>Kneel with big toes touching, knees wide. Fold forward, arms extended or by your sides. This pose activates the vagus nerve, triggering the relaxation response.</p>
+                <div class="tip-action">Hold for 1-3 minutes, focusing on lengthening your exhales.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 13: Emotional Regulation -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">💝</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Emotional Wellness</span>
+                <h3>Heart Coherence Breathing</h3>
+                <p>Place hand on heart, breathe in for 5 counts, out for 5 counts. Focus on feelings of appreciation or gratitude. This synchronizes heart rhythm with breath.</p>
+                <div class="tip-action">Practice for 3-5 minutes to shift from stress to coherence.</div>
+                <div class="tip-link">
+                  <a href="?technique=coherent" class="practice-link">🎯 Practice Coherent Breathing</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 14: Quick Relief -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">⏰</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Quick Relief</span>
+                <h3>90-Second Stress Reset</h3>
+                <p>Neurologically, emotions peak and begin to recede within 90 seconds. Breathe deeply, don't resist the feeling, and remind yourself: "This will pass."</p>
+                <div class="tip-action">Trust the process - your nervous system knows how to heal.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 15: Nature Connection -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🌳</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Nature Therapy</span>
+                <h3>Forest Bathing (Shinrin-yoku)</h3>
+                <p>Spend time in nature without agenda. Don't hike for exercise - simply be present. Studies show 20 minutes in nature significantly reduces stress hormones.</p>
+                <div class="tip-action">Even urban parks or looking at trees through a window helps.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tip 16: Self-Compassion -->
+          <div class="wellness-tip-slide">
+            <div class="wellness-tip-content">
+              <div class="wellness-tip-icon">🤗</div>
+              <div class="wellness-tip-text">
+                <span class="tip-category">Self-Compassion</span>
+                <h3>The Self-Compassion Break</h3>
+                <p>When struggling, place hands on heart and say: "This is a moment of suffering. Suffering is part of life. May I be kind to myself." Self-compassion reduces stress more than self-criticism.</p>
+                <div class="tip-action">Treat yourself with the same kindness you'd show a good friend.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="wellness-tips-controls">
+          <button class="wellness-tips-prev" aria-label="Previous tip">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="wellness-tips-dots">
+            <button class="dot active" data-slide="0" aria-label="Go to tip 1"></button>
+            <button class="dot" data-slide="1" aria-label="Go to tip 2"></button>
+            <button class="dot" data-slide="2" aria-label="Go to tip 3"></button>
+            <button class="dot" data-slide="3" aria-label="Go to tip 4"></button>
+            <button class="dot" data-slide="4" aria-label="Go to tip 5"></button>
+            <button class="dot" data-slide="5" aria-label="Go to tip 6"></button>
+            <button class="dot" data-slide="6" aria-label="Go to tip 7"></button>
+            <button class="dot" data-slide="7" aria-label="Go to tip 8"></button>
+            <button class="dot" data-slide="8" aria-label="Go to tip 9"></button>
+            <button class="dot" data-slide="9" aria-label="Go to tip 10"></button>
+            <button class="dot" data-slide="10" aria-label="Go to tip 11"></button>
+            <button class="dot" data-slide="11" aria-label="Go to tip 12"></button>
+            <button class="dot" data-slide="12" aria-label="Go to tip 13"></button>
+            <button class="dot" data-slide="13" aria-label="Go to tip 14"></button>
+            <button class="dot" data-slide="14" aria-label="Go to tip 15"></button>
+            <button class="dot" data-slide="15" aria-label="Go to tip 16"></button>
+          </div>
+          <button class="wellness-tips-next" aria-label="Next tip">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -546,6 +804,7 @@
 <script src="assets/js/burger-menu.js"></script>
 <script src="assets/js/breathing-practices.js"></script>
 <script src="assets/js/yoga-practices.js"></script>
+<script src="assets/js/wellness-tips.js"></script>
 <script src="assets/js/wellness-waves.js"></script>
 </body>
 </html>

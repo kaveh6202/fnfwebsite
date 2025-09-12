@@ -1,0 +1,465 @@
+/* Wellness Tips Slider Styles */
+
+/* ---- Wellness Tips Section ---- */
+.wellness-tips-section {
+  background: linear-gradient(135deg, var(--brand-light) 0%, rgba(236, 253, 245, 0.5) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 0;
+}
+
+/* ---- Wellness Tips Slider Container ---- */
+.wellness-tips-slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ---- Wellness Tips Track ---- */
+.wellness-tips-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ---- Wellness Tip Slide ---- */
+.wellness-tip-slide {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.wellness-tip-slide.active {
+  opacity: 1;
+}
+
+/* ---- Wellness Tip Content ---- */
+.wellness-tip-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px;
+  min-height: 300px;
+}
+
+/* ---- Wellness Tip Icon ---- */
+.wellness-tip-icon {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 48px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Add slight animation delay variations for more natural movement */
+.wellness-tip-slide:nth-child(2n) .wellness-tip-icon {
+  animation-delay: -1s;
+}
+
+.wellness-tip-slide:nth-child(3n) .wellness-tip-icon {
+  animation-delay: -2s;
+}
+
+.wellness-tip-slide:nth-child(4n) .wellness-tip-icon {
+  animation-delay: -0.5s;
+}
+
+/* ---- Wellness Tip Text ---- */
+.wellness-tip-text {
+  flex: 1;
+  text-align: left;
+}
+
+.wellness-tip-text .tip-category {
+  display: inline-block;
+  background: var(--brand-light);
+  color: var(--brand);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.wellness-tip-text h3 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.wellness-tip-text p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.wellness-tip-text .tip-action {
+  font-size: 14px;
+  color: var(--brand);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.wellness-tip-text .tip-link {
+  margin-top: 16px;
+}
+
+.practice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--brand) 0%, #34d399 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.2);
+}
+
+.practice-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  background: linear-gradient(135deg, #047857 0%, #10b981 100%);
+}
+
+.practice-link:active {
+  transform: translateY(0);
+}
+
+/* ---- Wellness Tips Controls ---- */
+.wellness-tips-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(250, 250, 250, 0.8);
+  border-top: 1px solid var(--border);
+}
+
+/* ---- Play/Pause Button ---- */
+.wellness-tips-play-pause {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--brand);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.wellness-tips-play-pause:hover {
+  background: var(--brand);
+  color: white;
+  transform: scale(1.05);
+}
+
+.wellness-tips-play-pause:active {
+  transform: scale(0.95);
+}
+
+.wellness-tips-play-pause svg {
+  transition: all 0.2s ease;
+}
+
+.wellness-tips-play-pause.paused {
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+.wellness-tips-play-pause.paused:hover {
+  background: #f59e0b;
+  color: white;
+}
+
+.wellness-tips-prev,
+.wellness-tips-next {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wellness-tips-prev:hover,
+.wellness-tips-next:hover {
+  background: var(--brand-light);
+  border-color: var(--brand);
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+
+.wellness-tips-prev:disabled,
+.wellness-tips-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---- Wellness Tips Dots ---- */
+.wellness-tips-dots {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wellness-tips-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.wellness-tips-dots .dot:hover {
+  border-color: var(--brand);
+  transform: scale(1.2);
+}
+
+.wellness-tips-dots .dot.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  transform: scale(1.3);
+}
+
+/* ---- Progress Bar ---- */
+.wellness-tips-slider .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--brand);
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+  z-index: 10;
+}
+
+/* ---- Responsive Wellness Tips Styles ---- */
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .wellness-tip-content {
+    padding: 80px;
+    gap: 50px;
+  }
+  
+  .wellness-tip-icon {
+    width: 140px;
+    height: 140px;
+    font-size: 56px;
+  }
+  
+  .wellness-tip-text h3 {
+    font-size: 26px;
+  }
+  
+  .wellness-tip-text p {
+    font-size: 17px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .wellness-tip-content {
+    padding: 50px 40px;
+    gap: 30px;
+  }
+  
+  .wellness-tip-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+  }
+  
+  .wellness-tip-text h3 {
+    font-size: 22px;
+  }
+  
+  .wellness-tip-text p {
+    font-size: 15px;
+  }
+  
+  .wellness-tips-controls {
+    padding: 16px 30px;
+  }
+  
+  .wellness-tips-play-pause {
+    width: 44px;
+    height: 44px;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wellness-tips-section {
+    padding: 60px 0;
+  }
+  
+  .wellness-tip-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+    gap: 24px;
+    min-height: auto;
+  }
+  
+  .wellness-tip-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+  }
+  
+  /* Reduce floating distance on mobile for better performance */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+  
+  .wellness-tip-text {
+    text-align: center;
+  }
+  
+  .wellness-tip-text h3 {
+    font-size: 20px;
+  }
+  
+  .wellness-tip-text p {
+    font-size: 14px;
+  }
+  
+  .practice-link {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+  
+  .wellness-tips-controls {
+    padding: 16px 20px;
+  }
+  
+  .wellness-tips-play-pause {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .wellness-tips-prev,
+  .wellness-tips-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .wellness-tips-dots .dot {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .wellness-tips-dots {
+    gap: 8px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .wellness-tip-content {
+    padding: 30px 20px;
+  }
+  
+  .wellness-tip-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+  
+  /* Further reduce floating distance on small mobile */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  
+  .wellness-tip-text h3 {
+    font-size: 18px;
+  }
+  
+  .wellness-tip-text p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  .practice-link {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  
+  .wellness-tips-controls {
+    padding: 12px 16px;
+  }
+  
+  .wellness-tips-play-pause {
+    width: 36px;
+    height: 36px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .wellness-tips-dots {
+    gap: 6px;
+  }
+}

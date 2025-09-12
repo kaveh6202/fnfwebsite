@@ -363,8 +363,9 @@
   }
   
   .btn.large {
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    max-width: 280px;
+    min-width: 200px;
   }
   
   .btn.early-bird-hero {
